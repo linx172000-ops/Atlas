@@ -403,8 +403,8 @@ const SUB_COLORS = {
     military: '#FF5722',
 };
 
-// Map init — set initial view to cover Pan-European scope (UK, Ireland, France, Iberia)
-const map = L.map('map').setView([48.0, -1.0], 5);
+// Map init — set initial view to cover Pan-European scope with Canvas renderer for fast mobile polylines
+const map = L.map('map', { preferCanvas: true }).setView([48.0, -1.0], 5);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> © <a href="https://carto.com/">CartoDB</a>',
     subdomains: 'abcd', maxZoom: 19
