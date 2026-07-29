@@ -860,6 +860,7 @@ document.querySelectorAll('input.opacity-slider').forEach(s => {
 async function loadStats() {
     try {
         const res = await fetch(`${API}/api/stats`);
+        if (!res.ok) throw new Error('API error');
         const stats = await res.json();
         const labels = {
             monumentos_megaliticos: 'Megalitos',
@@ -869,16 +870,44 @@ async function loadStats() {
             capa_hidrogeologica: 'Hidrología'
         };
         document.getElementById('stats-panel').innerHTML =
-            '<strong>Dataset</strong><br>' +
+            '<strong>Dataset (Live)</strong><br>' +
             Object.entries(stats).map(([k,v]) =>
                 `${labels[k] || k}: <strong style="color:#c0c8d8">${v}</strong>`
             ).join('<br>');
-        document.getElementById('api-status').textContent = '● API CONECTADA';
+        document.getElementById('api-status').textContent = '● MODO EN VIVO';
         document.getElementById('api-status').style.color = '#2ecc71';
     } catch(e) {
-        document.getElementById('api-status').textContent = '● API DESCONECTADA';
-        document.getElementById('api-status').style.color = '#e74c3c';
-        document.getElementById('stats-panel').innerHTML = '<span style="color:#e74c3c">API no disponible.<br>Ejecuta: uvicorn main:app</span>';
+        // Fallback modo estático autónomo (GitHub Pages)
+        try {
+            const resSt = await fetch('./atlas_data.geojson');
+            const dataSt = await resSt.json();
+            const feats = dataSt.features || [];
+            const counts = {};
+            feats.forEach(f => {
+                const dt = f.properties.data_type || 'otros';
+                counts[dt] = (counts[dt] || 0) + 1;
+            });
+            const labels = {
+                megalith: 'Megalitos',
+                archaeological: 'Construcciones',
+                geology_node: 'Nodos Tectónicos',
+                interpretive: 'Líneas Ley (v7)',
+                ley_line_doc: 'Ejes Históricos',
+                hydro: 'Hidrología',
+                historical_road: 'Caminos',
+                roman_road: 'Vías Romanas'
+            };
+            document.getElementById('stats-panel').innerHTML =
+                '<strong>Dataset (Estático)</strong><br>' +
+                Object.entries(counts).map(([k,v]) =>
+                    `${labels[k] || k}: <strong style="color:#c0c8d8">${v}</strong>`
+                ).join('<br>');
+            document.getElementById('api-status').textContent = '● MODO ESTÁTICO (GitHub Pages)';
+            document.getElementById('api-status').style.color = '#38bdf8';
+        } catch(stErr) {
+            document.getElementById('api-status').textContent = '● SIN DATOS';
+            document.getElementById('api-status').style.color = '#e74c3c';
+        }
     }
 }
 
