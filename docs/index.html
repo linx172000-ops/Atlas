@@ -680,11 +680,11 @@ async function fetchAndRender(year) {
                 if (key === 'hydro') {
                     weight = 3; lineColor = '#00A8FF'; lineOpacity = 0.9;
                 } else if (key === 'esoteric') {
-                    // Líneas Ley Calculadas: Línea Continua Cian Neón Eléctrico de Alta Visibilidad
-                    dashArray = null;
+                    // Líneas Ley Calculadas: Cian Neón Punteado estilo exacto imagen de referencia
+                    dashArray = '8 6';
                     weight = isMobile ? 3.5 : 3.0;
                     lineColor = '#00E5FF';
-                    lineOpacity = 1.0;
+                    lineOpacity = 0.95;
                 } else if (key === 'ley_lines_doc') {
                     // Líneas Ley Historicas/Documentadas: Magenta/Púrpura Neón
                     dashArray = isMobile ? null : '12 4';
