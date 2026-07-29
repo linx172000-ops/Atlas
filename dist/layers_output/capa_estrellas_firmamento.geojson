@@ -1,0 +1,3805 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -9.0234,
+            42.7352
+          ],
+          [
+            -8.884646900461785,
+            42.83686296664182
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Axeitos",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.2341,
+            43.1234
+          ],
+          [
+            -8.094466502890933,
+            43.22506182110502
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Pedra da Arca",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3600,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3600 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.9521,
+            42.6234
+          ],
+          [
+            -8.813597220690644,
+            42.72506329388246
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Tumulo de Chan da Cruz",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.2341,
+            42.5521
+          ],
+          [
+            -7.136240093614283,
+            42.67667207428399
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Furna dos Mouros",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Vega (Lira)",
+        "acimut_grados": 30.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Vega (Lira) en el año -3500 (Az 30.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.4521,
+            41.3521
+          ],
+          [
+            -8.316345564594705,
+            41.453766934285426
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Casota do Porco",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.1234,
+            43.4521
+          ],
+          [
+            -7.98300719539658,
+            43.55376083968184
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Barrosa",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.0234,
+            42.2341
+          ],
+          [
+            -7.840921125991345,
+            42.184741540336425
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Tumulo de Maus de Salas",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -4200 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.9234,
+            43.0521
+          ],
+          [
+            -7.824742535610045,
+            43.176671339052895
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Arca da Piosa",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3600,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Vega (Lira)",
+        "acimut_grados": 30.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Vega (Lira) en el año -3600 (Az 30.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.6234,
+            43.2521
+          ],
+          [
+            -7.483470730585466,
+            43.35376143810315
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de A Mota Grande",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.6234,
+            42.5521
+          ],
+          [
+            -3.48505611557116,
+            42.65376350196344
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de El Moreco",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3700,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3700 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.9521,
+            43.2234
+          ],
+          [
+            -5.812236857244901,
+            43.325061523652806
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Santa Cruz",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3600,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3600 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.3521,
+            42.8734
+          ],
+          [
+            -2.213035483962307,
+            42.9750625604874
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Aizkomendi",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.5521,
+            43.5234
+          ],
+          [
+            -7.452671775879109,
+            43.64797063491648
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Presiño",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Vega (Lira)",
+        "acimut_grados": 30.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Vega (Lira) en el año -3500 (Az 30.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.3234,
+            42.7521
+          ],
+          [
+            -8.184608936596565,
+            42.85376291707222
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Magros",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3700,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3700 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.6521,
+            43.2234
+          ],
+          [
+            -8.553164553222404,
+            43.347971084391446
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Brandariz",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Vega (Lira)",
+        "acimut_grados": 30.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Vega (Lira) en el año -3500 (Az 30.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.1234,
+            38.5521
+          ],
+          [
+            -7.993111744330823,
+            38.65377447424465
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Menhir de Almendres",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.5521,
+            40.8234
+          ],
+          [
+            -7.4174373942552965,
+            40.925068406356324
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Orca dos Padroes",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.6234,
+            41.5521
+          ],
+          [
+            -7.487224873451663,
+            41.65376637115957
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Tumulo da Portela da Juncal",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.8234,
+            41.6521
+          ],
+          [
+            -7.6870129241253355,
+            41.75376608828409
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Padrela",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.2234,
+            43.5521
+          ],
+          [
+            -7.082773630272548,
+            43.653760538980116
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Liñares",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.0234,
+            42.0521
+          ],
+          [
+            -6.926317526039633,
+            42.17667279777771
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de A Muradella",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Vega (Lira)",
+        "acimut_grados": 30.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Vega (Lira) en el año -3500 (Az 30.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.7234,
+            42.9734
+          ],
+          [
+            -8.533324655149281,
+            43.010484661292566
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Pedra Chantada",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Aldebarán (Tauro)",
+        "acimut_grados": 75.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Aldebarán (Tauro) en el año -3500 (Az 75.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.6521,
+            42.2134
+          ],
+          [
+            -8.46968084098727,
+            42.16404164528529
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Tumulo de Monte Penide",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -4000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.5234,
+            43.3734
+          ],
+          [
+            -8.371526883727208,
+            43.46579126195038
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Toural",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3600,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Deneb (Cisne / Santiago)",
+        "acimut_grados": 50.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Deneb (Cisne / Santiago) en el año -3600 (Az 50.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.5292,
+            37.0425
+          ],
+          [
+            -4.359909200867804,
+            36.99316593400589
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Tholos de El Romeral",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -2500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -2500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.0716,
+            37.4128
+          ],
+          [
+            -5.901477331563103,
+            37.3634643096894
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de la Pastora",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -2500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -2500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.8222,
+            37.6083
+          ],
+          [
+            -6.693588683583107,
+            37.709976882870485
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmens of El Pozuelo",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.6422,
+            36.815
+          ],
+          [
+            -5.514938775226256,
+            36.91667886040202
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Alberite",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.195,
+            36.7808
+          ],
+          [
+            -5.067795795831589,
+            36.882478944725435
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen del Gigante",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.2185,
+            39.6389
+          ],
+          [
+            -7.086180604190318,
+            39.74057162075096
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Tapada del Anta",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.14,
+            39.423
+          ],
+          [
+            -7.008092918282048,
+            39.52467219469266
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Lagunita",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.145,
+            39.421
+          ],
+          [
+            -7.013096717015838,
+            39.5226721999927
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Cajirón",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.9031,
+            38.4842
+          ],
+          [
+            -6.730482682505559,
+            38.434859517904705
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de la Granja",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.8122,
+            38.5133
+          ],
+          [
+            -6.639513058409276,
+            38.46395938578692
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de la Lapita",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.015,
+            40.612
+          ],
+          [
+            -3.880765878188059,
+            40.71366898837709
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Entretérminos",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.571,
+            42.562
+          ],
+          [
+            -2.4326340876346837,
+            42.66366347309996
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de San Martín",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.586,
+            42.567
+          ],
+          [
+            -2.447622958177624,
+            42.66866345851894
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Chabola de la Hechicera",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.061,
+            38.5615
+          ],
+          [
+            -7.8881975142630845,
+            38.51215916671794
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Cromlech of the Almendres",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -6000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -6000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.0515,
+            38.5645
+          ],
+          [
+            -7.8786903135633874,
+            38.51515915307325
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Menhir of Almendres",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -5000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -5000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.1292,
+            38.5261
+          ],
+          [
+            -7.956482401476231,
+            38.4767593276395
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Anta de São Brissos",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.0169,
+            38.8944
+          ],
+          [
+            -7.843291885438476,
+            38.84505764562494
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Anta de Pavia",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.9892,
+            38.6186
+          ],
+          [
+            -7.858790595655326,
+            38.7202743021528
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Vale Maria do Meio",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.1097,
+            38.7497
+          ],
+          [
+            -7.9364437039973765,
+            38.700358308530284
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Fontainhas Cromlech",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -4000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.7317,
+            41.4086
+          ],
+          [
+            -8.595827150720025,
+            41.510266775555195
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Cividade de Terroso",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -900,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -900 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.5647,
+            42.5681
+          ],
+          [
+            -2.426320509315369,
+            42.66976345531081
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Chabola de la Hechicera",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.5583,
+            37.0217
+          ],
+          [
+            -4.389055476958305,
+            36.97236602477451
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Tholos de El Romeral",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -1800,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -1800 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.8719,
+            41.8906
+          ],
+          [
+            -8.735003063441306,
+            41.99226541005156
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castro de Santa Trega",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -400,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -400 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.3919,
+            38.4681
+          ],
+          [
+            -7.261764202576893,
+            38.5697746911677
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Menhir de Outeiro",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.5519,
+            42.8711
+          ],
+          [
+            -2.4128406847891473,
+            42.97276256726177
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de San Adrián",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.8089,
+            43.2503
+          ],
+          [
+            -1.6689748807719367,
+            43.35196144347103
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Cromlech de Oianleku",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -1000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -1000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.8681,
+            37.0683
+          ],
+          [
+            -8.740413439625634,
+            37.16997823350006
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Menhir de Aspradantes",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -9.4628,
+            38.7758
+          ],
+          [
+            -9.332102612091,
+            38.87747389406616
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Anta de Adrenunes",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -9.2814,
+            39.0744
+          ],
+          [
+            -9.107350687437771,
+            39.025056817227934
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castro do Zambujal",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.2308,
+            39.4181
+          ],
+          [
+            -7.098902224505759,
+            39.5197722076772
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de El Mellizo",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.3817,
+            38.4556
+          ],
+          [
+            -7.251586835430452,
+            38.55727472340456
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Menhir de Bulhoa",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4000 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.878,
+            43.045
+          ],
+          [
+            -8.693131539154095,
+            42.99563737401676
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Pedra do Cadro",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3000 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.5517,
+            42.5539
+          ],
+          [
+            -2.3682905271969927,
+            42.50453991015878
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de El Sotillo",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3100 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.0333,
+            42.9833
+          ],
+          [
+            -0.8486168614361687,
+            42.933937694864895
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Cromlech de Ezkazuri",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -1500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -1500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.15,
+            42.7333
+          ],
+          [
+            -3.9660617982633086,
+            42.683938988352224
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de la Lastra",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3400,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3400 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.7111,
+            39.4083
+          ],
+          [
+            -6.579220830121052,
+            39.50997223364076
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Data I",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.4333,
+            39.4833
+          ],
+          [
+            -7.301278208038568,
+            39.58497203475325
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Menir da Meada",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -4500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -4500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.95,
+            38.9333
+          ],
+          [
+            -7.819011809514075,
+            39.03497348338612
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Anta do Monte da Ordem",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.8,
+            38.2
+          ],
+          [
+            -7.6280573885220955,
+            38.150660802642754
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Anta da Vidigueira",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3300,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3300 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            2.9667,
+            42.3833
+          ],
+          [
+            3.1496111500861033,
+            42.333940781854075
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Cabana Arqueta",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3200 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -9.0864,
+            43.0478
+          ],
+          [
+            -8.946939333462511,
+            43.14946204533183
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Casota de Freáns",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.5447,
+            42.5431
+          ],
+          [
+            -8.361322202736096,
+            42.493739965483186
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Petroglifos de Campo Lameiro",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.3211,
+            43.3467
+          ],
+          [
+            -5.135316856566524,
+            43.29733579579948
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Túmulo de San Román",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.1378,
+            42.9233
+          ],
+          [
+            -3.9532965166086527,
+            42.873938006256815
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castro de Celada Marlantes",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.1481,
+            43.0114
+          ],
+          [
+            -1.9633325328677824,
+            42.962037548821016
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Larrarte",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.3001,
+            39.3967
+          ],
+          [
+            -7.125250741791836,
+            39.347355323338256
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen Tapada del Anta",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.2245,
+            39.4059
+          ],
+          [
+            -7.049627718156722,
+            39.35655528049356
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen Zafra I",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.3125,
+            41.1417
+          ],
+          [
+            -8.133088329629114,
+            41.092346987156645
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castro de Monte Mozinho",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            2.2131,
+            41.5381
+          ],
+          [
+            2.3936051028586993,
+            41.48874503194066
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Menhir de Mollet",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.6722,
+            42.8422
+          ],
+          [
+            -0.4879384749688056,
+            42.79283842619398
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Guarrinza",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3411,
+            42.3489
+          ],
+          [
+            -0.203205792787936,
+            42.45056409237291
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Dolmen de Ibirque",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 45.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año -3500 (Az 45.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.2694,
+            39.8744
+          ],
+          [
+            4.445458834342779,
+            39.82505308360536
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Taula de Trepucó",
+        "origen_tipo": "Megalito",
+        "fecha_origen": -3500,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Sirio (Canis Major)",
+        "acimut_grados": 110.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Sirio (Canis Major) en el año -3500 (Az 110.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.7035,
+            42.3411
+          ],
+          [
+            -3.558608632037619,
+            42.437291054319196
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Catedral de Burgos",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1221,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1221 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.5444,
+            42.8806
+          ],
+          [
+            -8.398243873600876,
+            42.97678931423977
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Catedral de Santiago de Compostela",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1075,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1075 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.8803,
+            42.4881
+          ],
+          [
+            -5.735067466889471,
+            42.58429058318158
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Hospital de Orbigo",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1100 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.4025,
+            42.2671
+          ],
+          [
+            -4.257779409310667,
+            42.36329129065469
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "San Martin de Fromista",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1066,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1066 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.8633,
+            42.3218
+          ],
+          [
+            -2.7184532347311747,
+            42.41799111601182
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Monasterio de San Millan de la Cogolla",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 537,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 537 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.7037,
+            42.344
+          ],
+          [
+            -3.558801926283546,
+            42.44019104504605
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Hospital de Burgos",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1085,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1085 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.8,
+            41.4167
+          ],
+          [
+            -2.6571965148273033,
+            41.5128939673624
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Baudelio",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1000 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.9833,
+            41.9667
+          ],
+          [
+            -7.839266099733051,
+            42.062892244367234
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Santa Comba de Bande",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 600,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 600 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.8333,
+            43.3667
+          ],
+          [
+            -5.685973963015383,
+            43.46288772004477
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Santullano",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 800,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 800 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.3167,
+            42.5667
+          ],
+          [
+            -5.171283994578036,
+            42.662890330354806
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de San Miguel de Escalada",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 900,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 900 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.3781,
+            42.5067
+          ],
+          [
+            -6.232824116294447,
+            42.60289052340997
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Cruz de Fierro",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1000 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -9.0506,
+            43.1906
+          ],
+          [
+            -8.903701167416143,
+            43.286788300516434
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "San Xulián de Moraime",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1119,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1119 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.4214,
+            36.7213
+          ],
+          [
+            -4.287826326711638,
+            36.81750759343151
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Catedral de Málaga (Mozárabe)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1000 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.3736,
+            38.4069
+          ],
+          [
+            -6.236958455416313,
+            38.50310290831878
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de Nuestra Señora de la Consolación",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.3628,
+            39.4756
+          ],
+          [
+            -6.224076005768573,
+            39.571799823074855
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de Nuestra Señora de la Montaña",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1160,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1160 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3763,
+            39.4751
+          ],
+          [
+            -0.23757700624335742,
+            39.5712998245404
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Catedral de Valencia",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1238,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1238 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.6375,
+            41.0667
+          ],
+          [
+            -2.4954618495442973,
+            41.16289504863122
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia del Salvador, Sigüenza",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1124,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1124 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.8658,
+            43.2931
+          ],
+          [
+            -6.718652981642976,
+            43.389287963059815
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de La Mazona",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1100 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.2314,
+            43.4361
+          ],
+          [
+            -8.083904537450515,
+            43.5322874903548
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "San Tirso de Mandía",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.2839,
+            42.57
+          ],
+          [
+            -1.1384762754127324,
+            42.66619031972597
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Santa María de Sangüesa",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1131,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1131 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.3181,
+            43.0219
+          ],
+          [
+            -1.1716068086907447,
+            43.11808885345227
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Salvador de Ibañeta",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1000,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1000 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.6497,
+            42.8189
+          ],
+          [
+            -1.503690292049912,
+            42.91508951478315
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Hospital de Nuestra Señora de la Misericordia, Pamplona",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1147,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1147 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.8136,
+            42.6681
+          ],
+          [
+            -1.6679462098897375,
+            42.764290003243
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de Santiago, Puente la Reina",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1120,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1120 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.1953,
+            42.5728
+          ],
+          [
+            -2.049869724796888,
+            42.668990310706675
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia del Santo Sepulcro, Torres del Río",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.1917,
+            42.5706
+          ],
+          [
+            -2.046274871788253,
+            42.66679031779333
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de Santa María de los Arcos",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1175,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1175 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.7303,
+            42.4186
+          ],
+          [
+            -2.5852290850863247,
+            42.514790806206534
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Monasterio de Santa María la Real, Nájera",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1052,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1052 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.65,
+            42.3333
+          ],
+          [
+            -3.505126663282992,
+            42.42949107925655
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Nicolás de Puente Fitero",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1188,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1188 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.5167,
+            42.3667
+          ],
+          [
+            -3.3717494021301455,
+            42.46289097242994
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de Ages",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1100 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.81,
+            42.6078
+          ],
+          [
+            -6.664487762944684,
+            42.703990197896864
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de Santiago, Villafranca del Bierzo",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1070,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1070 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.0347,
+            42.7092
+          ],
+          [
+            -6.888949477935803,
+            42.80538987035119
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Hospital de O Cebreiro (más antiguo de España)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 900,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 900 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.4167,
+            42.7667
+          ],
+          [
+            -7.27081380544786,
+            42.86288968413537
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de Santiago de Barbadelo",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1088,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1088 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.0,
+            42.7833
+          ],
+          [
+            -7.85407456304019,
+            42.879489630311134
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Pazo de Bendoiro (albergue histórico)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.5447,
+            42.8819
+          ],
+          [
+            -8.398540783626546,
+            42.97808931001005
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Monasterio de San Martín Pinario",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 912,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 912 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.55,
+            43.2333
+          ],
+          [
+            -2.4029979358300326,
+            43.329488160075364
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Colegiata de Cenarruza",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1383,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1383 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.2167,
+            43.1833
+          ],
+          [
+            -3.069818793233911,
+            43.279488324506524
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de San Severino, Balmaseda",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1399,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1399 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.8667,
+            43.4
+          ],
+          [
+            -3.7192927436302705,
+            43.49618760989919
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Juan de Socueva",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 900,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 900 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.0611,
+            43.4619
+          ],
+          [
+            -4.913541397513216,
+            43.55808740483091
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Capilla de San Pedro, Ribadesella",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1150,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1150 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.1333,
+            43.55
+          ],
+          [
+            -5.985525157594047,
+            43.64618711223701
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Roque, Muros de Nalón",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.5667,
+            42.9667
+          ],
+          [
+            -7.420338776692586,
+            43.06288903371543
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Santa Eulalia de Boveda, Lugo",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 400,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 400 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.9922,
+            37.3892
+          ],
+          [
+            -5.857441274094618,
+            37.48540576236586
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de San Salvador, Sevilla",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1712,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1712 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.0628,
+            37.3989
+          ],
+          [
+            -5.928023773156332,
+            37.49510573553303
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Isidoro del Campo, Santiponce",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1301,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1301 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.3444,
+            38.9175
+          ],
+          [
+            -6.206777337521145,
+            39.013701445898114
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Catedral de Mérida",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 550,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 550 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.3722,
+            39.4764
+          ],
+          [
+            -6.233474404956928,
+            39.57259982072998
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Concatedral de Santa María, Cáceres",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1229,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1229 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.8667,
+            40.1083
+          ],
+          [
+            -5.726689740106168,
+            40.204497951423384
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de Nuestra Señora de la Salud, Baños",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1100 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.7478,
+            41.5006
+          ],
+          [
+            -5.604811031144135,
+            41.596793706430226
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita del Vierzo, Zamora",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1050,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1050 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.4833,
+            42.0167
+          ],
+          [
+            -7.339152530725231,
+            42.11289208625474
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Mamede, Laza",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1100 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.5803,
+            43.4017
+          ],
+          [
+            -5.432888593556544,
+            43.49788760427288
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Monasterio de Santa María de Valdediós",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.8833,
+            43.2167
+          ],
+          [
+            -6.736338094947869,
+            43.3128882146965
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Hospital de La Campa, Grandas de Salime",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1050,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1050 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.25,
+            42.9833
+          ],
+          [
+            -7.103599129955575,
+            43.07948897954001
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Monasterio de Santa María de Penamaior",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1153,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1153 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.9792,
+            39.5483
+          ],
+          [
+            -8.840330270344785,
+            39.644499609761525
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Mosteiro de Alcobaça",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1178,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1178 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.4267,
+            41.5453
+          ],
+          [
+            -8.283611887414377,
+            41.6414935671344
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Hospital de São Marcos, Braga",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1508,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1508 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.3333,
+            41.1667
+          ],
+          [
+            -8.191044562099206,
+            41.26289474088113
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Mosteiro de Paço de Sousa",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1088,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1088 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.6481,
+            42.4361
+          ],
+          [
+            -8.502988443858642,
+            42.53229075009594
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Convento de San Francisco, Pontevedra",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1221,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1221 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.6569,
+            42.7353
+          ],
+          [
+            -8.511087943912608,
+            42.831489785868335
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de Santiago de Padrón",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1150,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1150 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.2094,
+            43.2783
+          ],
+          [
+            -8.062288898130854,
+            43.37448801185569
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Santiago de Betanzos",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1400,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1400 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.4047,
+            43.3869
+          ],
+          [
+            -8.257324711422449,
+            43.483087653244205
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Torre de Hércules, A Coruña",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 100 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.5497,
+            42.5706
+          ],
+          [
+            -0.4042748717882528,
+            42.66679031779333
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de Santiago, Jaca",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1150,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1150 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3763,
+            39.4751
+          ],
+          [
+            -0.23757700624335742,
+            39.5712998245404
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Catedral de Valencia (La Seu)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1238,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1238 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.1294,
+            40.0789
+          ],
+          [
+            -1.989450417028149,
+            40.175098039164524
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia del Salvador, Cuenca",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1254,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1254 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.6378,
+            41.0664
+          ],
+          [
+            -2.4957624997573498,
+            41.162595049553055
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Catedral de Sigüenza",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1124,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1124 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -9.0167,
+            42.9167
+          ],
+          [
+            -8.870457990808713,
+            43.01288919671732
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Ermita de San Pedro Mártir, Olveiroa",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.2167,
+            39.4667
+          ],
+          [
+            -8.077993810483049,
+            39.56289984915813
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castillo Templario de Almourol (Portugal)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1171,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1171 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -3.8333,
+            38.7222
+          ],
+          [
+            -3.696055553724285,
+            38.81840200773555
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castillo Templario de Calatrava la Nueva",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1150,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1150 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.3167,
+            42.5167
+          ],
+          [
+            -5.171400792493571,
+            42.612890491259954
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castillo de Oseja (Templar)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1150,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1150 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.4072,
+            39.6033
+          ],
+          [
+            -8.26821966416806,
+            39.69949944808459
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Igreja de Santa Maria do Olival (Tomar)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1160,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1160 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.5425,
+            42.3169
+          ],
+          [
+            -4.3976645517450645,
+            42.413091131668644
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de Santa María la Blanca (Villalcázar de Sirga)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1170,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1170 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.7725,
+            38.3208
+          ],
+          [
+            -6.636021455347614,
+            38.417003152872724
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castillo de Jerez de los Caballeros",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1238,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1238 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.5706,
+            42.6003
+          ],
+          [
+            -5.4251053385460235,
+            42.6964902220811
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Colegiata de San Isidoro de León",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1063,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1063 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.5819,
+            42.6019
+          ],
+          [
+            -5.436401589649867,
+            42.698090216922296
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Hospital de San Marcos de León",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1152,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1152 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.6031,
+            42.3383
+          ],
+          [
+            -4.458215105617707,
+            42.43449106327177
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Carrion de los Condes",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1150,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1150 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.4475,
+            42.4667
+          ],
+          [
+            -2.3023172924625266,
+            42.562890651906955
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Logrono",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1170,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1170 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.8152,
+            42.6719
+          ],
+          [
+            -1.6695372748339914,
+            42.76808999096356
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia del Crucifijo (Puente la Reina)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1146,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1146 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.1352,
+            42.3161
+          ],
+          [
+            -3.9903663991522866,
+            42.412291134224645
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Iglesia de San Juan (Castrojeriz)",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1214,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1214 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0.195,
+            41.91
+          ],
+          [
+            0.33890546183690506,
+            42.00619242336578
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castillo de Monzón",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1050,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1050 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -8.2903,
+            41.4475
+          ],
+          [
+            -8.147428514595507,
+            41.543693871651904
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Capela de São Miguel do Castelo",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1100,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1100 (Az 48.0°)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.5,
+            39.8333
+          ],
+          [
+            -7.360553818231598,
+            39.929498769176185
+          ]
+        ]
+      },
+      "properties": {
+        "origen_nombre": "Castelo de Castelo Branco",
+        "origen_tipo": "Templo / Encomienda",
+        "fecha_origen": 1200,
+        "subcapa": "align_stellar",
+        "etiqueta_alineacion": "⭐ Puntería a Arturo (Boötes)",
+        "acimut_grados": 48.0,
+        "explicacion_alineacion": "Eje astronómico proyectado exactamente hacia la salida de Arturo (Boötes) en el año 1200 (Az 48.0°)."
+      }
+    }
+  ]
+}
