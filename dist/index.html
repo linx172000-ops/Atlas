@@ -555,8 +555,8 @@ async function fetchAndRender(year) {
                 features = (staticData.features || []).filter(f => {
                     const k = getLayerKey(f.properties);
                     if (!k || !activeSet.has(k)) return false;
-                    // Filtro por año timeline
-                    const yr = f.properties.fecha_inicio_aprox ?? f.properties.fecha_construccion ?? f.properties.fecha_fundacion ?? f.properties.fecha_historica_inicio;
+                    // Filtro por año timeline (si aplica)
+                    const yr = f.properties.fecha_inicio_aprox ?? f.properties.fecha_construccion ?? f.properties.fecha_fundacion ?? f.properties.fecha_historica_inicio ?? f.properties.fecha_origen;
                     if (yr !== null && yr !== undefined && yr > year) return false;
                     return true;
                 });
