@@ -672,26 +672,42 @@ async function fetchAndRender(year) {
             } else if (feature.geometry.type === 'LineString') {
                 const latlngs = feature.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
                 let dashArray = null;
-                let weight = 2;
+                let weight = 2.5;
                 let lineColor = color;
+                let lineOpacity = 0.85;
                 const isMobile = window.innerWidth <= 900;
-                if (key === 'hydro')              { weight = 3; lineColor = '#00A8FF'; } // Río (Línea Continua Azul Turquesa)
-                else if (key === 'esoteric')      { dashArray = isMobile ? null : '10 6'; weight = isMobile ? 3 : 2.5; lineColor = '#00E5FF'; }
-                else if (key === 'ley_lines_doc') { dashArray = isMobile ? null : '6 3'; weight = isMobile ? 3.5 : 2.5; lineColor = '#9B59B6'; }
-                else if (key === 'roads')         { weight = 3.5; }
-                else if (key === 'roman_roads')   { weight = 2.5; }
-                else if (key.startsWith('align_') || key === 'alignments') {
+
+                if (key === 'hydro') {
+                    weight = 3; lineColor = '#00A8FF'; lineOpacity = 0.9;
+                } else if (key === 'esoteric') {
+                    // Líneas Ley Calculadas: Cian Neón brillante de alto contraste
+                    dashArray = isMobile ? null : '8 4';
+                    weight = isMobile ? 3.5 : 2.5;
+                    lineColor = '#00E5FF';
+                    lineOpacity = 0.95;
+                } else if (key === 'ley_lines_doc') {
+                    // Líneas Ley Historicas/Documentadas: Magenta/Púrpura Neón
+                    dashArray = isMobile ? null : '12 4';
+                    weight = isMobile ? 4 : 3;
+                    lineColor = '#FF00FF';
+                    lineOpacity = 0.95;
+                } else if (key === 'roads') {
+                    weight = 3.5; lineColor = '#F1C40F';
+                } else if (key === 'roman_roads') {
+                    weight = 2.5; lineColor = '#C0392B';
+                } else if (key.startsWith('align_') || key === 'alignments') {
                     weight = 2.5;
                     dashArray = key === 'align_stellar' ? '6 4' : '8 4';
                     lineColor = COLORS[key] || '#FFD700';
-                }
-                else if (key === 'stars') {
+                    lineOpacity = 0.95;
+                } else if (key === 'stars') {
                     const isMW = props.tipo === 'via_lactea' || props.tipo === 'via_lactea_banda_ancha';
                     weight = isMW ? 16 : 3;
                     lineColor = isMW ? '#88aaff' : '#ffffcc';
                     dashArray = isMW ? null : '4 8';
+                    lineOpacity = isMW ? 0.35 : 0.7;
                 }
-                leafLayer = L.polyline(latlngs, { color: lineColor, weight, dashArray, opacity: key.startsWith('align_') ? 0.95 : (key === 'stars' ? 0.65 : 0.85) });
+                leafLayer = L.polyline(latlngs, { color: lineColor, weight, dashArray, opacity: lineOpacity });
             }
 
             if (!leafLayer) return;
