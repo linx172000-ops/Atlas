@@ -551,7 +551,15 @@ async function fetchAndRender(year) {
                 const resStatic = await fetch('./atlas_data.geojson');
                 if (!resStatic.ok) throw new Error('No static data');
                 const staticData = await resStatic.json();
-                features = staticData.features || [];
+                const activeSet = new Set(active.split(','));
+                features = (staticData.features || []).filter(f => {
+                    const k = getLayerKey(f.properties);
+                    if (!k || !activeSet.has(k)) return false;
+                    // Filtro por año timeline
+                    const yr = f.properties.fecha_inicio_aprox ?? f.properties.fecha_construccion ?? f.properties.fecha_fundacion ?? f.properties.fecha_historica_inicio;
+                    if (yr !== null && yr !== undefined && yr > year) return false;
+                    return true;
+                });
             } catch(staticErr) {
                 console.error('No hay backend ni datos estáticos disponibles.', staticErr);
             }
@@ -564,6 +572,8 @@ async function fetchAndRender(year) {
             const props = feature.properties;
             const key = getLayerKey(props);
             if (!key || !layerGroups[key]) return;
+            const cb = document.getElementById(`layer-${key}`);
+            if (cb && !cb.checked) return;
 
             const color = COLORS[key];
             let leafLayer;
