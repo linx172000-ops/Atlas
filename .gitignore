@@ -1,0 +1,25 @@
+# Archivos a ignorar en el repositorio
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Base de datos local (pesada, no se sube)
+atlas.db
+
+# Logs y archivos temporales
+*.log
+*.tmp
+
+# Archivos de desarrollo Python (no necesarios para el mapa)
+*.py
+requirements.txt
+
+# Archivos de capas intermedias
+layers_output/
+nodos_naturales_*.json
+cadena_logica_ollama.txt
+
+# ZIP de distribución mobile
+atlas_mobile_pack.zip
