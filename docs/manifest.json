@@ -1,0 +1,9 @@
+{
+  "short_name": "Atlas Ley",
+  "name": "Atlas de L\u00edneas Ley y Megalitos",
+  "icons": [],
+  "start_url": "./index.html",
+  "background_color": "#0a0c10",
+  "theme_color": "#0a0c10",
+  "display": "standalone"
+}

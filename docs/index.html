@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atlas del Paisaje Histórico — Visor cartográfico interactivo del norte peninsular, 4500 a.C. – 1250 d.C.">
+    <title>Atlas del Paisaje Histórico — Laboratorio Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { margin:0; font-family:'Inter',sans-serif; background:#0a0e1a; color:#e0e0e0; display:flex; flex-direction:column; height:100vh; overflow:hidden; }
+
+        /* HEADER */
+        header {
+            height:54px; background:#0d1117; border-bottom:1px solid #1e3a5f;
+            display:flex; justify-content:space-between; align-items:center;
+            padding:0 24px; flex-shrink:0;
+        }
+        header h1 {
+            font-size:15px; letter-spacing:3px; font-weight:700; margin:0;
+            background:linear-gradient(90deg, #4a9eff, #7c5cbf);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            background-clip:text;
+        }
+        .header-right { display:flex; flex-direction:column; align-items:flex-end; gap:2px; }
+        .subtitle { font-size:10px; color:#7a8899; letter-spacing:2px; }
+        .api-status { font-size:9px; color:#2ecc71; letter-spacing:1px; }
+
+        /* MAIN */
+        main { flex:1; display:flex; overflow:hidden; }
+
+        /* LEFT PANEL */
+        aside {
+            width:340px; background:#0d1117; border-right:1px solid #1e3a5f;
+            overflow-y:auto; padding:16px; flex-shrink:0; display:flex;
+            flex-direction:column; gap:8px;
+        }
+        .panel-title {
+            color:#4a9eff; font-size:12px; letter-spacing:2px;
+            text-transform:uppercase; margin:0 0 12px; font-weight:700;
+        }
+        .layer-group {
+            background:#111827; border:1px solid #1e3a5f; border-radius:6px;
+            padding:10px 12px; margin-bottom:8px;
+        }
+        .layer-group-title {
+            font-size:11px; color:#38bdf8; letter-spacing:1.5px;
+            text-transform:uppercase; margin-bottom:8px; font-weight:700;
+        }
+        .layer-row { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .layer-row input[type="checkbox"] { width:16px; height:16px; accent-color:#38bdf8; cursor:pointer; }
+        .layer-row label { font-size:13px; font-weight:600; color:#f1f5f9; cursor:pointer; flex:1; }
+        .layer-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+        .opacity-row { display:flex; align-items:center; gap:8px; margin-top:4px; }
+        .opacity-label { font-size:10px; color:#94a3b8; width:36px; font-weight:600; }
+        input[type="range"].opacity-slider {
+            flex:1; height:6px; accent-color:#38bdf8; cursor:pointer;
+        }
+
+        /* STATS */
+        #stats-panel {
+            margin-top:auto; padding-top:12px; border-top:1px solid #1e3a5f;
+            font-size:10px; color:#556677; line-height:1.8;
+        }
+        #stats-panel strong { color:#4a9eff; }
+
+        /* MAP */
+        #map { flex:1; }
+
+        /* FOOTER TIMELINE */
+        footer {
+            height:80px; background:#0d1117; border-top:1px solid #1e3a5f;
+            display:flex; align-items:center; padding:0 20px; gap:16px; flex-shrink:0;
+        }
+        #year-display {
+            font-size:20px; font-weight:700; min-width:130px; text-align:right;
+            background:linear-gradient(90deg,#4a9eff,#7c5cbf);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            background-clip:text;
+        }
+        #play-btn {
+            padding:8px 16px; background:#1e3a5f; color:#4a9eff;
+            border:1px solid #2a5080; border-radius:3px; cursor:pointer;
+            font-family:'Inter',sans-serif; font-size:11px; letter-spacing:2px;
+            font-weight:600; transition:background 0.2s;
+        }
+        #play-btn:hover { background:#2a5080; }
+        #timeline-slider {
+            flex:1; accent-color:#4a9eff; cursor:pointer; height:4px;
+        }
+        #speed-select {
+            padding:6px 10px; background:#111827; color:#4a9eff;
+            border:1px solid #1e3a5f; border-radius:3px;
+            font-family:'Inter',sans-serif; font-size:11px; cursor:pointer;
+        }
+        .timeline-label { font-size:9px; color:#556677; letter-spacing:1px; white-space:nowrap; }
+
+        /* LEAFLET POPUP OVERRIDES — MÁXIMA LEGIBILIDAD DE ALTO CONTRASTE */
+        .leaflet-popup-content-wrapper {
+            background:#0f172a !important; border:2px solid #38bdf8 !important;
+            border-radius:8px !important; color:#f8fafc !important; max-width:320px !important;
+            box-shadow:0 10px 25px rgba(0,0,0,0.8) !important; padding:4px !important;
+        }
+        .leaflet-popup-tip { background:#0f172a !important; border:1px solid #38bdf8 !important; }
+        .popup-archaeological {
+            padding:10px; border-left:4px solid #38bdf8;
+            font-size:12px; line-height:1.7; background:#1e293b; border-radius:4px;
+        }
+        .popup-interpretive {
+            padding:10px; border-left:4px solid #f59e0b; margin-top:8px;
+            color:#fef3c7; font-size:12px; line-height:1.6;
+            background:#1e1b4b; border-radius:4px; font-weight:500;
+        }
+        .popup-field { display:flex; gap:8px; margin-bottom:3px; }
+        .popup-key { color:#38bdf8; font-weight:700; min-width:85px; text-transform:capitalize; }
+        .popup-val { color:#f1f5f9; font-weight:500; }
+        .popup-section-title {
+            font-size:10px; letter-spacing:1.5px; text-transform:uppercase;
+            color:#94a3b8; font-weight:700; margin-bottom:6px; margin-top:4px;
+        }
+        /* TOOLTIP FLOTANTE SOBRE ELEMENTOS DEL MAPA — NUNCA BLANCO */
+        .leaflet-tooltip {
+            background:#0f172a !important; border:1px solid #38bdf8 !important;
+            color:#f8fafc !important; font-family:'Inter',sans-serif !important;
+            font-size:12px !important; border-radius:6px !important;
+            padding:6px 10px !important; box-shadow:0 4px 15px rgba(0,0,0,0.8) !important;
+        }
+        /* RECUADRO FLOTANTE TIMELINE TÁCTIL PARA TABLET Y MÓVIL */
+        footer {
+            height: 70px; background: rgba(13, 17, 23, 0.95);
+            border-top: 1px solid #1e3a5f; backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 16px; gap: 12px; flex-shrink: 0; z-index: 1000;
+        }
+        .timeline-controls-group {
+            display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+        }
+        #year-display {
+            font-size: 18px; font-weight: 700; min-width: 110px; text-align: center;
+            background: linear-gradient(90deg, #4a9eff, #7c5cbf);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; padding: 4px 8px; border: 1px solid #1e3a5f;
+            border-radius: 4px; background-color: #111827;
+        }
+        #play-btn {
+            padding: 10px 18px; background: #1e3a5f; color: #4a9eff;
+            border: 1px solid #2a5080; border-radius: 6px; cursor: pointer;
+            font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 1.5px;
+            font-weight: 700; touch-action: manipulation;
+        }
+        #speed-select {
+            padding: 8px 10px; background: #111827; color: #4a9eff;
+            border: 1px solid #1e3a5f; border-radius: 6px; font-size: 12px;
+        }
+        #timeline-slider {
+            flex: 1; height: 10px; accent-color: #4a9eff; cursor: pointer;
+            border-radius: 5px; touch-action: manipulation;
+        }
+
+        @media (max-width: 900px) {
+            header { padding: 0 12px; height: 48px; }
+            header h1 { font-size: 12px; letter-spacing: 1px; }
+            .subtitle { display: none; }
+            
+            main { position: relative; flex-direction: column; }
+            aside {
+                position: absolute; top: 0; left: 0; bottom: 0; z-index: 1100;
+                width: 280px; transform: translateX(-100%); transition: transform 0.3s ease;
+                box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+            }
+            aside.open { transform: translateX(0); }
+            
+            #toggle-aside-btn {
+                display: flex !important;
+                position: absolute; top: 12px; left: 12px; z-index: 1050;
+                background: #0d1117; color: #4a9eff; border: 1px solid #1e3a5f;
+                border-radius: 4px; padding: 8px 12px; font-size: 12px; font-weight: bold;
+                cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            }
+            
+            footer {
+                position: absolute; bottom: 10px; left: 10px; right: 10px;
+                height: auto; padding: 12px; border-radius: 8px; border: 1px solid #2a5080;
+                flex-direction: column; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            }
+            .timeline-slider-row {
+                display: flex; align-items: center; width: 100%; gap: 8px;
+            }
+            .timeline-controls-group {
+                width: 100%; justify-content: space-between;
+            }
+        }
+        
+        #toggle-aside-btn { display: none; }
+    </style>
+</head>
+<body>
+<button id="toggle-aside-btn">☰ CAPAS</button>
+<header>
+    <div style="display:flex; align-items:center; gap:16px;">
+        <h1>ATLAS DEL PAISAJE HISTÓRICO</h1>
+        <div style="display:flex; gap:6px;">
+            <button id="tab-btn-map" class="nav-tab active" style="padding:6px 12px; background:#1e3a5f; color:#fff; border:1px solid #4a9eff; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer;">🗺️ Mapa Interactivo</button>
+            <button id="tab-btn-report" class="nav-tab" style="padding:6px 12px; background:#111827; color:#7a8899; border:1px solid #1e3a5f; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer;">🤖 Informe de Hallazgos IA</button>
+        </div>
+    </div>
+    <div class="header-right">
+        <div class="subtitle">LABORATORIO DIGITAL — FASE I</div>
+        <div class="api-status" id="api-status">● CONECTANDO...</div>
+    </div>
+</header>
+
+<div id="ai-report-container" style="display:none; flex:1; overflow-y:auto; padding:24px 40px; background:#0a0e1a; font-size:14px; line-height:1.8; color:#d0d8e8;">
+    <div id="ai-report-content" style="max-width:900px; margin:0 auto; background:#0d1117; padding:32px; border:1px solid #1e3a5f; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.5);">
+        Cargando informe de correlación IA...
+    </div>
+</div>
+
+<main>
+    <aside>
+        <div style="display:flex; gap:8px; margin-bottom:12px;">
+            <button id="btn-select-all" style="flex:1; padding:6px; background:#2c3e50; color:#fff; border:1px solid #34495e; border-radius:4px; font-size:0.8em; cursor:pointer;">✓ Seleccionar Todo</button>
+            <button id="btn-deselect-all" style="flex:1; padding:6px; background:#2c3e50; color:#888; border:1px solid #34495e; border-radius:4px; font-size:0.8em; cursor:pointer;">✗ Deseleccionar</button>
+        </div>
+
+        <!-- SECCIÓN 1: ARQUEOLOGÍA Y MONUMENTOS -->
+        <div class="layer-group">
+            <div class="layer-group-title">🏛️ 1. Monumentos y Asentamientos</div>
+            <div class="layer-row">
+                <input type="checkbox" id="layer-megaliths" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#16A085;"></div>
+                <label for="layer-megaliths">Megalitos (▲ Turquesa / ⎔ Carmín)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-constructions" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#E67E22;"></div>
+                <label for="layer-constructions">Edificios Medievales (Naranja)</label>
+            </div>
+            <div class="opacity-row">
+                <span class="opacity-label">Opac.</span>
+                <input type="range" id="opacity-constructions" class="opacity-slider" min="0" max="1" step="0.05" value="0.9">
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: RUTAS Y CAMINOS -->
+        <div class="layer-group">
+            <div class="layer-group-title">🛣️ 2. Rutas y Caminos Históricos</div>
+            <div class="layer-row">
+                <input type="checkbox" id="layer-roads" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#F1C40F;"></div>
+                <label for="layer-roads">Caminos de Santiago (Dorado Sol)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-roman_roads" class="layer-cb">
+                <div class="layer-dot" style="background:#C0392B;"></div>
+                <label for="layer-roman_roads">Vías Romanas / Antiguas (Rojo Granate)</label>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: GEOFÍSICA Y ENERGÍA TELÚRICA -->
+        <div class="layer-group">
+            <div class="layer-group-title">⚡ 3. Geofísica y Corrientes Telúricas</div>
+            <div class="layer-row">
+                <input type="checkbox" id="layer-geology" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#2ECC71;"></div>
+                <label for="layer-geology">Nodos Tectónicos V-88 (Verde Vivo)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-esoteric" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#00E5FF;"></div>
+                <label for="layer-esoteric">Líneas Ley Calculadas (Cian Eléctrico)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-ley_lines_doc" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#8E44AD;"></div>
+                <label for="layer-ley_lines_doc">Líneas Ley Documentadas (Púrpura)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-hydro" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#00A8FF;"></div>
+                <label for="layer-hydro">💧 Hidrología (Ríos y Acuíferos)</label>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 5: ARQUEOASTRONOMÍA SOLAR Y LUNAR -->
+        <div class="layer-group">
+            <div class="layer-group-title">☀️ 5. Arqueoastronomía Solar y Lunar</div>
+            <div class="layer-row">
+                <input type="checkbox" id="layer-astro-solar-summer" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#FFD700"></div>
+                <label for="layer-astro-solar-summer">☀️ Solsticio de Verano (Orto NE ~62°)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-astro-solar-winter" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#FFA500"></div>
+                <label for="layer-astro-solar-winter">☀️ Solsticio de Invierno (Orto SE ~118°)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-astro-solar-equinox" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#F1C40F"></div>
+                <label for="layer-astro-solar-equinox">☀️ Equinoccio (Este Puro 90°)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-align_solar" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#E67E22"></div>
+                <label for="layer-align_solar">☀️ Todas las Alineaciones Solares</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-align_lunar" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#C0C0C0"></div>
+                <label for="layer-align_lunar">🌕 Eje Lunisticial (Mayor y Menor)</label>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 6: EJE CELESTE ESTELAR -->
+        <div class="layer-group">
+            <div class="layer-group-title">⭐ 6. Eje Celeste Estelar (Puntería por Precesión)</div>
+            <div class="layer-row">
+                <input type="checkbox" id="layer-align_stellar" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#38BDF8; box-shadow:0 0 6px #38BDF8;"></div>
+                <label for="layer-align_stellar">✨ Estrellas Guía (Sirio, Pléyades, Deneb, Thuban)</label>
+            </div>
+            <div class="opacity-row">
+                <span class="opacity-label">Opac.</span>
+                <input type="range" id="opacity-align_stellar" class="opacity-slider" min="0" max="1" step="0.05" value="0.85" data-layer="align_stellar">
+            </div>
+        </div>
+
+        <!-- SECCIÓN 7: EJE TELÚRICO TERRESTRE -->
+        <div class="layer-group">
+            <div class="layer-group-title">⚡ 7. Eje Telúrico Terrestre (Fallas y Agua)</div>
+            <div class="layer-row">
+                <input type="checkbox" id="layer-align_terrestrial" class="layer-cb" checked>
+                <div class="layer-dot" style="background:#00E5FF; box-shadow:0 0 6px #00E5FF;"></div>
+                <label for="layer-align_terrestrial">⚡ Eje Telúrico (Falla Tectónica y Acuífero)</label>
+            </div>
+            <div class="layer-row" style="margin-top:4px;">
+                <input type="checkbox" id="layer-alignments" checked>
+                <div class="layer-dot" style="background:#FFD700;"></div>
+                <label for="layer-alignments">📐 Todos los Rayos de Acimut / Ábsides (16km)</label>
+            </div>
+            <div class="opacity-row">
+                <span class="opacity-label">Opac.</span>
+                <input type="range" id="opacity-alignments" class="opacity-slider" min="0" max="1" step="0.05" value="0.85" data-layer="alignments">
+            </div>
+        </div>
+
+        <div id="stats-panel">Cargando estadísticas...</div>
+    </aside>
+
+    <div id="map"></div>
+</main>
+
+<footer>
+    <div class="timeline-slider-row">
+        <span class="timeline-label">4500 a.C.</span>
+        <input type="range" id="timeline-slider" min="-4500" max="1250" value="-3000">
+        <span class="timeline-label">1250 d.C.</span>
+    </div>
+    <div class="timeline-controls-group">
+        <div id="year-display">3000 a.C.</div>
+        <button id="play-btn">▶ PLAY</button>
+        <select id="speed-select">
+            <option value="1000">1x</option>
+            <option value="500">2x</option>
+            <option value="200">5x</option>
+            <option value="100">10x</option>
+        </select>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+const API = `http://${window.location.hostname || 'localhost'}:8080`;
+const COLORS = {
+    megaliths:     '#16A085',
+    constructions: '#E67E22',
+    roads:         '#F1C40F',
+    roman_roads:   '#C0392B',
+    ley_lines_doc: '#8E44AD',
+    hydro:         '#00A8FF',
+    geology:       '#2ECC71',
+    esoteric:      '#00E5FF',
+    stars:         '#FFFFFF',
+    milkyway:      '#AABBFD',
+    alignments:    '#FFD700',
+    align_solar:   '#FFD700',
+    align_lunar:   '#C0C0C0',
+    align_stellar: '#FF00FF',
+    align_terrestrial: '#00E5FF',
+    'astro-solar-summer':  '#FFD700',
+    'astro-solar-winter':  '#FF8C00',
+    'astro-solar-equinox': '#D35400',
+    'astro-lunar-major':   '#BDC3C7',
+    'astro-lunar-minor':   '#7F8C8D',
+};
+
+const SUB_COLORS = {
+    megalith: '#1ABC9C',
+    cromlech: '#E91E63',
+    medieval: '#F39C12',
+    military: '#FF5722',
+};
+
+// Map init — set initial view to cover Pan-European scope (UK, Ireland, France, Iberia)
+const map = L.map('map').setView([48.0, -1.0], 5);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> © <a href="https://carto.com/">CartoDB</a>',
+    subdomains: 'abcd', maxZoom: 19
+}).addTo(map);
+
+// Layer groups — one per layer type, all always on map
+const layerGroups = {
+    megaliths:     L.layerGroup().addTo(map),
+    constructions: L.layerGroup().addTo(map),
+    roads:         L.layerGroup().addTo(map),
+    roman_roads:   L.layerGroup().addTo(map),
+    ley_lines_doc: L.layerGroup().addTo(map),
+    hydro:         L.layerGroup().addTo(map),
+    geology:       L.layerGroup().addTo(map),
+    esoteric:      L.layerGroup().addTo(map),
+    stars:         L.layerGroup().addTo(map),
+    milkyway:      L.layerGroup().addTo(map),
+    alignments:    L.layerGroup().addTo(map),
+    align_solar:   L.layerGroup().addTo(map),
+    align_lunar:   L.layerGroup().addTo(map),
+    align_stellar: L.layerGroup().addTo(map),
+    align_terrestrial: L.layerGroup().addTo(map),
+    'astro-solar-summer': L.layerGroup().addTo(map),
+    'astro-solar-winter': L.layerGroup().addTo(map),
+    'astro-solar-equinox': L.layerGroup().addTo(map),
+    'astro-lunar-major': L.layerGroup().addTo(map),
+    'astro-lunar-minor': L.layerGroup().addTo(map),
+};
+
+// --- Helpers ---
+function formatYear(y) {
+    if (y === null || y === undefined || y === 0) return '?';
+    return y < 0 ? Math.abs(y) + ' a.C.' : y + ' d.C.';
+}
+
+function getLayerKey(props) {
+    if (!props) return null;
+    if (props.data_type === 'megalith') return 'megaliths';
+    if (props.data_type === 'archaeological') return 'constructions';
+    if (props.data_type === 'roman_road') return 'roman_roads';
+    if (props.data_type === 'ley_line_doc') return 'ley_lines_doc';
+    if (props.data_type === 'historical_road') return 'roads';
+    if (props.data_type === 'hydro') return 'hydro';
+    if (props.data_type === 'milkyway') return 'milkyway';
+    if (props.tipo_camino) return 'roads';
+    if (props.tipo === 'Rio' || props.tipo === 'Acuifero historico' || props.tipo === 'Falla tectonica' || props.tipo === 'Lago') return 'hydro';
+    if (props.data_type === 'interpretive') return 'esoteric';
+    if (props.subcapa === 'align_stellar' || props.layer === 'align_stellar_target' || props.layer === 'capa_estelar_independiente') return 'align_stellar';
+    if (props.data_type === 'geology_node') return 'geology';
+    if (props.data_type === 'alignment_ray') return props.subcapa || 'alignments';
+    if (props.data_type === 'astronomy') return 'astro-' + props.astro_event;
+    if (props.data_type === 'stellar') return 'stars';
+    return null;
+}
+
+function getFeatureTypeParam(key, props) {
+    if (key === 'megaliths') return 'megalitico';
+    if (key === 'constructions') {
+        if (props.sub_category === 'megalith') return 'megalitico';
+        if (props.sub_category === 'military') return 'militar';
+        return 'medieval';
+    }
+    const map = {
+        roads:       'camino',
+        roman_roads: 'camino',
+        hydro:       'hidrogeologico',
+        esoteric:    'ley',
+        geology:     'geologia'
+    };
+    return map[key] || null;
+}
+
+function buildPopupContent(datos, notas) {
+    const skip = ['geometria_geojson','puntos_geojson'];
+    const fields = Object.entries(datos)
+        .filter(([k,v]) => v !== null && v !== undefined && !skip.includes(k))
+        .map(([k,v]) => `<div class="popup-field"><span class="popup-key">${k}</span><span class="popup-val">${v}</span></div>`)
+        .join('');
+
+    let html = `<div class="popup-section-title">Datos Arqueológicos</div>
+                <div class="popup-archaeological">${fields}</div>`;
+
+    if (notas && notas.length > 0) {
+        const notasHtml = notas.map(n =>
+            `<div><strong>${n.categoria_interpretacion}</strong><br>${n.descripcion_hipotesis}<br><em>— ${n.fuente_bibliografica || ''}</em></div>`
+        ).join('<hr style="border-color:#2a1040;margin:6px 0">');
+        html += `<div class="popup-section-title" style="margin-top:8px">⚠ Interpretativo</div>
+                 <div class="popup-interpretive">${notasHtml}</div>`;
+    }
+    
+    if (datos.justificacion_geomantica) {
+        html += `<div class="popup-section-title" style="margin-top:8px; color:#00FFFF;">Naturaleza del Nodo</div><div class="popup-interpretive" style="color:#00FFFF;">${datos.justificacion_geomantica}</div>`;
+    }
+    if (datos.marcas_esotericas) {
+        html += `<div class="popup-section-title" style="margin-top:8px; color:#F39C12;">★ Marca Esotérica</div>
+                 <div class="popup-interpretive" style="color:#F39C12; font-weight:bold;">${datos.marcas_esotericas}</div>`;
+    }
+
+    return html;
+}
+
+// --- Opacity helpers (LayerGroup has no setOpacity, must iterate) ---
+function setLayerGroupOpacity(key, opacity) {
+    layerGroups[key].eachLayer(l => {
+        if (l.setOpacity) l.setOpacity(opacity);
+        if (l.setStyle)   l.setStyle({ opacity: opacity, fillOpacity: opacity * 0.7 });
+    });
+}
+
+function applyAllOpacities() {
+    Object.keys(layerGroups).forEach(key => {
+        const slider = document.getElementById(`opacity-${key}`);
+        if (slider) setLayerGroupOpacity(key, parseFloat(slider.value));
+    });
+}
+
+// --- Main render ---
+let currentYear = -3000;
+let rendering = false;
+
+async function fetchAndRender(year) {
+    if (rendering) return;
+    rendering = true;
+    try {
+        const active = Object.keys(layerGroups)
+            .filter(k => document.getElementById(`layer-${k}`)?.checked)
+            .join(',');
+
+        if (!active) {
+            Object.values(layerGroups).forEach(lg => lg.clearLayers());
+            rendering = false;
+            return;
+        }
+
+        let features = [];
+        try {
+            const res = await fetch(`${API}/api/features?year=${year}&layers=${active}`);
+            if (!res.ok) throw new Error('API error ' + res.status);
+            const data = await res.json();
+            features = data.features || [];
+        } catch(apiErr) {
+            // Static fallback mode — GitHub Pages / sin backend
+            try {
+                const resStatic = await fetch('./atlas_data.geojson');
+                if (!resStatic.ok) throw new Error('No static data');
+                const staticData = await resStatic.json();
+                features = staticData.features || [];
+            } catch(staticErr) {
+                console.error('No hay backend ni datos estáticos disponibles.', staticErr);
+            }
+        }
+
+        // Clear all groups
+        Object.values(layerGroups).forEach(lg => lg.clearLayers());
+
+        features.forEach(feature => {
+            const props = feature.properties;
+            const key = getLayerKey(props);
+            if (!key || !layerGroups[key]) return;
+
+            const color = COLORS[key];
+            let leafLayer;
+
+
+            if (feature.geometry.type === 'Point') {
+                const [lng, lat] = feature.geometry.coordinates;
+                if (props.es_vortice_maestro) {
+                    const customIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: `<div style="color:#FF00FF; font-size: 28px; font-weight: bold; text-shadow: 0 0 8px #FF00FF, 0 0 2px #000; line-height: 28px; text-align: center;">♦</div>`,
+                        iconSize: [28, 28], iconAnchor: [14, 14]
+                    });
+                    leafLayer = L.marker([lat, lng], { icon: customIcon });
+                } else if (props.marcas_esotericas) {
+                    const iconSymbol = props.marcas_esotericas.toLowerCase().includes('oca') ? '🪶' : (props.marcas_esotericas.toLowerCase().includes('tridente') ? '🔱' : '★');
+                    const customIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: `<div style="color:#F39C12; font-size: 22px; font-weight: bold; text-shadow: 0 0 6px #000; line-height: 22px; text-align: center;">${iconSymbol}</div>`,
+                        iconSize: [22, 22], iconAnchor: [11, 11]
+                    });
+                    leafLayer = L.marker([lat, lng], { icon: customIcon });
+                } else if (key === 'constructions' && (props.sub_category === 'military' || props.nombre_orden || (props.fuente && props.fuente.includes('Temple')))) {
+                    // Orden del Temple / Encomiendas Militares (✠ Cruz Templaria Carmesí)
+                    const customIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: `<div style="color:#E74C3C; font-size: 24px; font-weight: bold; text-shadow: 0 0 6px #000; line-height: 24px; text-align: center;">✠</div>`,
+                        iconSize: [24, 24], iconAnchor: [12, 12]
+                    });
+                    leafLayer = L.marker([lat, lng], { icon: customIcon });
+                } else if (key === 'stars' || key === 'align_stellar') {
+                    // Retícula astronómica de fotometría profesional SVG (sin caricaturas)
+                    const color = props.es_estrella_horizonte ? '#38BDF8' : '#F43F5E';
+                    const name = (props.nombre || 'Estrella Target').replace('⭐ ','').replace('✨ ','').replace('🌟 ','').replace('💫 ','').replace('🔹 ','').replace('🌀 ','').replace('✝️ ','');
+                    const svgHtml = `<div style="display:flex; flex-direction:column; align-items:center;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" style="filter: drop-shadow(0 0 4px ${color});">
+                            <circle cx="12" cy="12" r="3" fill="${color}"/>
+                            <circle cx="12" cy="12" r="7" stroke="${color}" stroke-width="1" fill="none" opacity="0.6"/>
+                            <line x1="12" y1="1" x2="12" y2="23" stroke="${color}" stroke-width="0.8"/>
+                            <line x1="1" y1="12" x2="23" y2="12" stroke="${color}" stroke-width="0.8"/>
+                        </svg>
+                        <div style="font-size:9px; font-weight:600; color:#e2e8f0; background:rgba(15,23,42,0.9); padding:1px 5px; border-radius:2px; border:1px solid ${color}; white-space:nowrap; margin-top:2px; letter-spacing:0.5px;">${name}</div>
+                    </div>`;
+                    const customIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: svgHtml,
+                        iconSize: [90, 36], iconAnchor: [45, 10]
+                    });
+                    leafLayer = L.marker([lat, lng], { icon: customIcon });
+                } else if (key === 'megaliths') {
+                    // Formas geométricas sobrias sin efecto neón recargado
+                    const isCromlech = props.tipo === 'Cromlech';
+                    const iconGlyph = isCromlech ? '⎔' : '▲';
+                    const iconColor = isCromlech ? '#E74C3C' : '#16A085';
+                    const size = isCromlech ? 18 : 16;
+                    const customIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: `<div style="color:${iconColor}; font-size:${size}px; font-weight:bold; text-shadow: 0 1px 2px #000; line-height:${size}px; text-align:center;">${iconGlyph}</div>`,
+                        iconSize: [size, size], iconAnchor: [size/2, size/2]
+                    });
+                    leafLayer = L.marker([lat, lng], { icon: customIcon });
+                } else {
+                    let pointColor = color;
+                    let radius = 6;
+                    if (key === 'constructions') {
+                        pointColor = SUB_COLORS.medieval; radius = 8;
+                    }
+                    leafLayer = L.circleMarker([lat, lng], {
+                        radius, color: pointColor, fillColor: pointColor,
+                        fillOpacity: 0.75, weight: 1.5
+                    });
+                }
+            } else if (feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon') {
+                if (key === 'hydro') {
+                    // Lago / Albufera / Marisma (Azul Turquesa Brilante)
+                    leafLayer = L.geoJSON(feature, {
+                        style: {
+                            color: '#00A8FF',
+                            fillColor: '#00C8FF',
+                            fillOpacity: 0.45,
+                            weight: 2
+                        }
+                    });
+                } else {
+                    // Polígono fotorrealista para la franja ancha del "Camino de las Estrellas" (Vía Láctea)
+                    leafLayer = L.geoJSON(feature, {
+                        style: {
+                            color: '#99bbff',
+                            fillColor: '#88aaff',
+                            fillOpacity: 0.35,
+                            weight: 2,
+                            dashArray: '6 6'
+                        }
+                    });
+                }
+            } else if (feature.geometry.type === 'LineString') {
+                const latlngs = feature.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+                let dashArray = null;
+                let weight = 2;
+                let lineColor = color;
+                if (key === 'hydro')              { weight = 3; lineColor = '#00A8FF'; } // Río (Línea Continua Azul Turquesa)
+                else if (key === 'esoteric')      { dashArray = '10 6'; weight = 2; }
+                else if (key === 'ley_lines_doc') { dashArray = '6 3'; weight = 2; }
+                else if (key === 'roads')         { weight = 3.5; }
+                else if (key === 'roman_roads')   { weight = 2.5; }
+                else if (key.startsWith('align_') || key === 'alignments') {
+                    weight = 2.5;
+                    dashArray = key === 'align_stellar' ? '6 4' : '8 4';
+                    lineColor = COLORS[key] || '#FFD700';
+                }
+                else if (key === 'stars') {
+                    const isMW = props.tipo === 'via_lactea' || props.tipo === 'via_lactea_banda_ancha';
+                    weight = isMW ? 16 : 3;
+                    lineColor = isMW ? '#88aaff' : '#ffffcc';
+                    dashArray = isMW ? null : '4 8';
+                }
+                leafLayer = L.polyline(latlngs, { color: lineColor, weight, dashArray, opacity: key.startsWith('align_') ? 0.95 : (key === 'stars' ? 0.65 : 0.85) });
+            }
+
+            if (!leafLayer) return;
+
+            // Tooltip
+            const label = props.nombre || props.nombre_sitio || props.nombre_orden || props.origen_nombre || `Astro ${props.astro_event || ''}`;
+            const yearVal = props.fecha_inicio_aprox ?? props.fecha_construccion ?? props.fecha_fundacion ?? props.fecha_origen ?? props.anio_calculo;
+            const yearStr = yearVal ? ` — ${formatYear(yearVal)}` : '';
+            const extraInfo = props.explicacion_alineacion ? `<br/><span style="color:#FFD700; font-size:0.9em;">${props.etiqueta_alineacion}</span><br/><span style="font-size:0.85em; color:#ddd;">${props.explicacion_alineacion}</span>` : (props.etiqueta_alineacion ? ` | ${props.etiqueta_alineacion} (Az=${props.acimut_grados}°)` : (props.oblicuidad_grados ? ` (ε=${props.oblicuidad_grados}°)` : ''));
+            leafLayer.bindTooltip(
+                `<strong>${label}</strong>${yearStr}${extraInfo}`,
+                { sticky: true, direction: 'top' }
+            );
+
+            // Click → fetch detail
+            const featureId = props.id;
+            const typeParam = getFeatureTypeParam(key, props);
+            leafLayer.on('click', async () => {
+                let html = buildPopupContent(props, []);
+                if (typeParam && featureId) {
+                    try {
+                        const dr = await fetch(`${API}/api/feature/${featureId}?type=${typeParam}`);
+                        if (dr.ok) {
+                            const detail = await dr.json();
+                            if (detail.datos_arqueologicos) {
+                                html = buildPopupContent(detail.datos_arqueologicos, detail.notas_interpretativas);
+                            }
+                        }
+                    } catch(e) {
+                        console.warn('Could not fetch remote detail, using props:', e);
+                    }
+                }
+                leafLayer.bindPopup(html, { maxWidth: 320 }).openPopup();
+            });
+
+            layerGroups[key].addLayer(leafLayer);
+        });
+
+        applyAllOpacities();
+    } catch(e) {
+        console.error('fetchAndRender error:', e);
+    } finally {
+        rendering = false;
+    }
+}
+
+// --- Timeline controls ---
+const slider = document.getElementById('timeline-slider');
+const yearDisplay = document.getElementById('year-display');
+const playBtn = document.getElementById('play-btn');
+const speedSel = document.getElementById('speed-select');
+
+slider.addEventListener('input', () => {
+    currentYear = parseInt(slider.value);
+    yearDisplay.textContent = formatYear(currentYear);
+    fetchAndRender(currentYear);
+});
+
+let playInterval = null;
+playBtn.addEventListener('click', () => {
+    if (playInterval) {
+        clearInterval(playInterval);
+        playInterval = null;
+        playBtn.textContent = '▶ PLAY';
+    } else {
+        playBtn.textContent = '⏸ PAUSE';
+        const interval = parseInt(speedSel.value);
+        playInterval = setInterval(() => {
+            let v = parseInt(slider.value);
+            if (v >= 1250) {
+                clearInterval(playInterval);
+                playInterval = null;
+                playBtn.textContent = '▶ PLAY';
+                return;
+            }
+            v = Math.min(v + 50, 1250);
+            slider.value = v;
+            currentYear = v;
+            yearDisplay.textContent = formatYear(v);
+            fetchAndRender(v);
+        }, interval);
+    }
+});
+
+// Pestañas Mapa / Informe IA
+const tabMapBtn = document.getElementById('tab-btn-map');
+const tabReportBtn = document.getElementById('tab-btn-report');
+const mainElem = document.querySelector('main');
+const footerElem = document.querySelector('footer');
+const reportContainer = document.getElementById('ai-report-container');
+const reportContent = document.getElementById('ai-report-content');
+
+tabMapBtn?.addEventListener('click', () => {
+    tabMapBtn.style.background = '#1e3a5f';
+    tabMapBtn.style.color = '#fff';
+    tabReportBtn.style.background = '#111827';
+    tabReportBtn.style.color = '#7a8899';
+    mainElem.style.display = 'flex';
+    footerElem.style.display = 'flex';
+    reportContainer.style.display = 'none';
+    map.invalidateSize();
+});
+
+tabReportBtn?.addEventListener('click', async () => {
+    tabReportBtn.style.background = '#1e3a5f';
+    tabReportBtn.style.color = '#fff';
+    tabMapBtn.style.background = '#111827';
+    tabMapBtn.style.color = '#7a8899';
+    mainElem.style.display = 'none';
+    footerElem.style.display = 'none';
+    reportContainer.style.display = 'block';
+    
+    try {
+        const res = await fetch(`${API}/api/ai_report`);
+        const data = await res.json();
+        let md = data.report || '';
+        // Convert simple MD headers/lists to HTML
+        md = md.replace(/^# (.*$)/gim, '<h1 style="color:#4a9eff; font-size:22px; border-bottom:1px solid #1e3a5f; padding-bottom:8px;">$1</h1>')
+               .replace(/^## (.*$)/gim, '<h2 style="color:#7c5cbf; font-size:18px; margin-top:20px;">$1</h2>')
+               .replace(/^### (.*$)/gim, '<h3 style="color:#FFD700; font-size:15px; margin-top:16px;">$1</h3>')
+               .replace(/\*\*(.*?)\*\*/g, '<strong style="color:#ffffff;">$1</strong>')
+               .replace(/`([^`]+)`/g, '<code style="background:#1e293b; color:#38bdf8; padding:2px 6px; border-radius:4px;">$1</code>')
+               .replace(/^\- (.*$)/gim, '<li style="margin-left:20px; color:#cbd5e1;">$1</li>')
+               .replace(/\n/g, '<br/>');
+        reportContent.innerHTML = md;
+    } catch(e) {
+        reportContent.innerHTML = '<span style="color:#e74c3c">No se pudo cargar el informe de IA.</span>';
+    }
+});
+
+// Toggle sidebar en móvil / tablet
+const toggleBtn = document.getElementById('toggle-aside-btn');
+const asideElem = document.querySelector('aside');
+toggleBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    asideElem?.classList.toggle('open');
+});
+map.on('click', () => asideElem?.classList.remove('open'));
+
+// Botones Seleccionar Todo y Deseleccionar Todo
+document.getElementById('btn-select-all')?.addEventListener('click', () => {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+    fetchAndRender(currentYear);
+});
+
+document.getElementById('btn-deselect-all')?.addEventListener('click', () => {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    fetchAndRender(currentYear);
+});
+
+// Checkboxes
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => fetchAndRender(currentYear));
+});
+
+// Opacity sliders (only those with data-layer attr)
+document.querySelectorAll('input.opacity-slider').forEach(s => {
+    s.addEventListener('input', () => {
+        const key = s.dataset.layer;
+        if (key && layerGroups[key]) {
+            setLayerGroupOpacity(key, parseFloat(s.value));
+        }
+    });
+});
+
+// --- Load stats ---
+async function loadStats() {
+    try {
+        const res = await fetch(`${API}/api/stats`);
+        const stats = await res.json();
+        const labels = {
+            monumentos_megaliticos: 'Megalitos',
+            caminos_historicos: 'Caminos',
+            construcciones_medievales: 'Construcciones',
+            ordenes_militares: 'Encomiendas',
+            capa_hidrogeologica: 'Hidrología'
+        };
+        document.getElementById('stats-panel').innerHTML =
+            '<strong>Dataset</strong><br>' +
+            Object.entries(stats).map(([k,v]) =>
+                `${labels[k] || k}: <strong style="color:#c0c8d8">${v}</strong>`
+            ).join('<br>');
+        document.getElementById('api-status').textContent = '● API CONECTADA';
+        document.getElementById('api-status').style.color = '#2ecc71';
+    } catch(e) {
+        document.getElementById('api-status').textContent = '● API DESCONECTADA';
+        document.getElementById('api-status').style.color = '#e74c3c';
+        document.getElementById('stats-panel').innerHTML = '<span style="color:#e74c3c">API no disponible.<br>Ejecuta: uvicorn main:app</span>';
+    }
+}
+
+
+// Init
+window.addEventListener('load', () => {
+    loadStats();
+    yearDisplay.textContent = formatYear(currentYear);
+    fetchAndRender(currentYear);
+
+    // Registrar Service Worker para soporte offline (PWA)
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('SW registrado:', reg.scope))
+            .catch(err => console.warn('SW no disponible:', err));
+    }
+});
+</script>
+</body>
+</html>
