@@ -674,9 +674,10 @@ async function fetchAndRender(year) {
                 let dashArray = null;
                 let weight = 2;
                 let lineColor = color;
+                const isMobile = window.innerWidth <= 900;
                 if (key === 'hydro')              { weight = 3; lineColor = '#00A8FF'; } // Río (Línea Continua Azul Turquesa)
-                else if (key === 'esoteric')      { dashArray = '10 6'; weight = 2; }
-                else if (key === 'ley_lines_doc') { dashArray = '6 3'; weight = 2; }
+                else if (key === 'esoteric')      { dashArray = isMobile ? null : '10 6'; weight = isMobile ? 3 : 2.5; lineColor = '#00E5FF'; }
+                else if (key === 'ley_lines_doc') { dashArray = isMobile ? null : '6 3'; weight = isMobile ? 3.5 : 2.5; lineColor = '#9B59B6'; }
                 else if (key === 'roads')         { weight = 3.5; }
                 else if (key === 'roman_roads')   { weight = 2.5; }
                 else if (key.startsWith('align_') || key === 'alignments') {
