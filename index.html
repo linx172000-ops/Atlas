@@ -336,7 +336,7 @@
                 <label for="layer-align_terrestrial">⚡ Eje Telúrico (Falla Tectónica y Acuífero)</label>
             </div>
             <div class="layer-row" style="margin-top:4px;">
-                <input type="checkbox" id="layer-alignments" checked>
+                <input type="checkbox" id="layer-alignments" class="layer-cb" checked>
                 <div class="layer-dot" style="background:#FFD700;"></div>
                 <label for="layer-alignments">📐 Todos los Rayos de Acimut / Ábsides (16km)</label>
             </div>
@@ -494,13 +494,25 @@ function buildPopupContent(datos, notas) {
         html += `<div class="popup-section-title" style="margin-top:8px">⚠ Interpretativo</div>
                  <div class="popup-interpretive">${notasHtml}</div>`;
     }
-    
+
     if (datos.justificacion_geomantica) {
         html += `<div class="popup-section-title" style="margin-top:8px; color:#00FFFF;">Naturaleza del Nodo</div><div class="popup-interpretive" style="color:#00FFFF;">${datos.justificacion_geomantica}</div>`;
     }
     if (datos.marcas_esotericas) {
         html += `<div class="popup-section-title" style="margin-top:8px; color:#F39C12;">★ Marca Esotérica</div>
                  <div class="popup-interpretive" style="color:#F39C12; font-weight:bold;">${datos.marcas_esotericas}</div>`;
+    }
+
+    // === ALINEACIÓN ASTRONÓMICA (megalitos, medievales, cualquier feature con datos de alineación) ===
+    if (datos.etiqueta_alineacion || datos.explicacion_alineacion || datos.acimut_grados) {
+        const azStr = datos.acimut_grados != null ? ` <span style="color:#FFD700">(Az=${datos.acimut_grados}°)</span>` : '';
+        const subcapaStr = datos.subcapa ? ` <span style="color:#aaa; font-size:0.85em">[${datos.subcapa}]</span>` : '';
+        let alignHtml = '';
+        if (datos.etiqueta_alineacion) alignHtml += `<div style="color:#FFD700; font-weight:700; font-size:0.95em">${datos.etiqueta_alineacion}${azStr}${subcapaStr}</div>`;
+        if (datos.explicacion_alineacion) alignHtml += `<div style="color:#f1c40f; font-size:0.88em; margin-top:4px">${datos.explicacion_alineacion}</div>`;
+        if (!datos.etiqueta_alineacion && datos.acimut_grados) alignHtml += `<div style="color:#FFD700">Acimut: ${datos.acimut_grados}°${subcapaStr}</div>`;
+        html += `<div class="popup-section-title" style="margin-top:8px; color:#FFD700;">☀️ Alineación Astronómica</div>
+                 <div class="popup-interpretive">${alignHtml}</div>`;
     }
 
     return html;
@@ -726,6 +738,29 @@ async function fetchAndRender(year) {
             const featureId = props.id;
             const typeParam = getFeatureTypeParam(key, props);
             leafLayer.on('click', async () => {
+                // Astro features (solsticios, alineaciones solares/lunares) — popup enriquecido sin backend
+                const isAstro = key.startsWith('astro-') || key === 'align_solar' || key === 'align_lunar';
+                if (isAstro) {
+                    const evtType = props.astro_event || props.tipo_evento || key;
+                    const evtNames = {
+                        'solar-summer': '☀️ Solsticio de Verano',
+                        'solar-winter': '🌅 Solsticio de Invierno',
+                        'solar-equinox': '⚖️ Equinoccio',
+                        'align_solar': '☀️ Alineación Solar',
+                        'align_lunar': '🌕 Eje Lunisticial'
+                    };
+                    const evtLabel = evtNames[evtType] || evtType;
+                    const az = props.azimut ?? props.acimut_grados;
+                    const azStr = az != null ? `<div class="popup-field"><span class="popup-key">Acimut</span><span class="popup-val" style="color:#FFD700">${az}°</span></div>` : '';
+                    const etiqStr = props.etiqueta_alineacion ? `<div class="popup-field"><span class="popup-key">Etiqueta</span><span class="popup-val">${props.etiqueta_alineacion}</span></div>` : '';
+                    const explStr = props.explicacion_alineacion ? `<div style="color:#f1c40f; font-size:0.88em; margin-top:6px">${props.explicacion_alineacion}</div>` : '';
+                    const sitioId = props.megalito_id ? `<div class="popup-field"><span class="popup-key">Nodo ID</span><span class="popup-val">${props.megalito_id}</span></div>` : '';
+                    const html = `<div class="popup-section-title" style="color:#FFD700">${evtLabel}</div>
+                        <div class="popup-archaeological">${sitioId}${azStr}${etiqStr}</div>${explStr}`;
+                    leafLayer.bindPopup(html, { maxWidth: 320 }).openPopup();
+                    return;
+                }
+
                 let html = buildPopupContent(props, []);
                 if (typeParam && featureId) {
                     try {
