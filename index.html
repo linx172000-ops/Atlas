@@ -193,6 +193,75 @@
         }
         
         #toggle-aside-btn { display: none; }
+
+        /* THEME TOGGLE */
+        .map-theme-control {
+            margin: 12px 12px 0 0 !important;
+        }
+        .map-theme-btn {
+            background: rgba(13, 17, 23, 0.9);
+            color: #38bdf8;
+            border: 1px solid #1e3a5f;
+            border-radius: 6px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(6px);
+            touch-action: manipulation;
+        }
+        .map-theme-btn:hover {
+            background: #1e3a5f;
+            color: #ffffff;
+            border-color: #38bdf8;
+            transform: translateY(-1px);
+        }
+        body.light-theme .map-theme-btn {
+            background: rgba(255, 255, 255, 0.95);
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        body.light-theme .map-theme-btn:hover {
+            background: #f1f5f9;
+            color: #0284c7;
+            border-color: #0284c7;
+        }
+        
+        #theme-toggle-header-btn {
+            padding: 6px 12px;
+            background: #111827;
+            color: #38bdf8;
+            border: 1px solid #1e3a5f;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+        #theme-toggle-header-btn:hover {
+            background: #1e3a5f;
+            color: #fff;
+            border-color: #38bdf8;
+        }
+        body.light-theme #theme-toggle-header-btn {
+            background: #f8fafc;
+            color: #0f172a;
+            border-color: #94a3b8;
+        }
+        body.light-theme #theme-toggle-header-btn:hover {
+            background: #e2e8f0;
+            color: #0284c7;
+        }
     </style>
 </head>
 <body>
@@ -203,6 +272,9 @@
         <div style="display:flex; gap:6px;">
             <button id="tab-btn-map" class="nav-tab active" style="padding:6px 12px; background:#1e3a5f; color:#fff; border:1px solid #4a9eff; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer;">🗺️ Mapa Interactivo</button>
             <button id="tab-btn-report" class="nav-tab" style="padding:6px 12px; background:#111827; color:#7a8899; border:1px solid #1e3a5f; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer;">🤖 Informe de Hallazgos IA</button>
+            <button id="theme-toggle-header-btn" title="Alternar entre vista oscura y clara">
+                <span class="theme-icon">☀️</span> <span class="theme-label">Vista Clara</span>
+            </button>
         </div>
     </div>
     <div class="header-right">
@@ -403,12 +475,82 @@ const SUB_COLORS = {
     military: '#FF5722',
 };
 
-// Map init — set initial view to cover Pan-European scope with Canvas renderer for fast mobile polylines
-const map = L.map('map', { preferCanvas: true }).setView([48.0, -1.0], 5);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+// Tile layers — Dark and Light
+const darkTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> © <a href="https://carto.com/">CartoDB</a>',
     subdomains: 'abcd', maxZoom: 19
-}).addTo(map);
+});
+
+const lightTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> © <a href="https://carto.com/">CartoDB</a>',
+    subdomains: 'abcd', maxZoom: 19
+});
+
+let currentTheme = localStorage.getItem('atlas_theme') || 'dark';
+
+// Map init — set initial view to cover Pan-European scope with Canvas renderer for fast mobile polylines
+const map = L.map('map', { preferCanvas: true }).setView([48.0, -1.0], 5);
+
+if (currentTheme === 'light') {
+    lightTileLayer.addTo(map);
+    document.body.classList.add('light-theme');
+} else {
+    darkTileLayer.addTo(map);
+}
+
+function updateThemeUI() {
+    const isLight = currentTheme === 'light';
+    const icon = isLight ? '🌙' : '☀️';
+    const label = isLight ? 'Vista Oscura' : 'Vista Clara';
+    
+    document.querySelectorAll('.theme-icon').forEach(el => el.textContent = icon);
+    document.querySelectorAll('.theme-label').forEach(el => el.textContent = label);
+    
+    if (isLight) {
+        document.body.classList.add('light-theme');
+    } else {
+        document.body.classList.remove('light-theme');
+    }
+}
+
+function toggleTheme() {
+    if (currentTheme === 'dark') {
+        map.removeLayer(darkTileLayer);
+        lightTileLayer.addTo(map);
+        lightTileLayer.bringToBack();
+        currentTheme = 'light';
+    } else {
+        map.removeLayer(lightTileLayer);
+        darkTileLayer.addTo(map);
+        darkTileLayer.bringToBack();
+        currentTheme = 'dark';
+    }
+    localStorage.setItem('atlas_theme', currentTheme);
+    updateThemeUI();
+}
+
+// Control flotante en la esquina del mapa (ideal para tablets y móviles)
+const ThemeControl = L.Control.extend({
+    options: { position: 'topright' },
+    onAdd: function(map) {
+        const div = L.DomUtil.create('div', 'map-theme-control');
+        div.innerHTML = `<button id="map-theme-btn" class="map-theme-btn" title="Alternar entre vista clara y oscura">
+            <span class="theme-icon">${currentTheme === 'light' ? '🌙' : '☀️'}</span>
+            <span class="theme-label">${currentTheme === 'light' ? 'Vista Oscura' : 'Vista Clara'}</span>
+        </button>`;
+        L.DomEvent.disableClickPropagation(div);
+        L.DomEvent.disableScrollPropagation(div);
+        div.querySelector('#map-theme-btn').addEventListener('click', toggleTheme);
+        return div;
+    }
+});
+map.addControl(new ThemeControl());
+
+// Event listener para el botón del encabezado
+const headerThemeBtn = document.getElementById('theme-toggle-header-btn');
+if (headerThemeBtn) {
+    headerThemeBtn.addEventListener('click', toggleTheme);
+}
 
 // Layer groups — one per layer type, all always on map
 const layerGroups = {
