@@ -1,4 +1,4 @@
-const CACHE_NAME = 'atlas-pwa-v10';
+const CACHE_NAME = 'atlas-pwa-v11';
 const ASSETS = [
   './',
   './index.html',
