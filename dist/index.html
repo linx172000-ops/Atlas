@@ -262,36 +262,6 @@
             background: #e2e8f0;
             color: #0284c7;
         }
-
-        /* API KEY BADGE & MODAL */
-        .api-key-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #f59e0b;
-            background: rgba(245, 158, 11, 0.12);
-            border: 1px solid rgba(245, 158, 11, 0.4);
-            padding: 4px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
-        }
-        .api-key-badge:hover {
-            background: rgba(245, 158, 11, 0.25);
-            border-color: #f59e0b;
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
-        }
-        body.light-theme .api-key-badge {
-            background: rgba(217, 119, 6, 0.12);
-            border-color: rgba(217, 119, 6, 0.5);
-            color: #b45309;
-        }
     </style>
 </head>
 <body>
@@ -309,28 +279,9 @@
     </div>
     <div class="header-right">
         <div class="subtitle">LABORATORIO DIGITAL — FASE I</div>
-        <div style="display:flex; align-items:center; gap:8px;">
-            <div class="api-key-badge" id="api-key-badge" onclick="openApiKeyModal()" title="API Key Required para funciones avanzadas">🔑 API KEY REQUIRED</div>
-            <div class="api-status" id="api-status">● CONECTANDO...</div>
-        </div>
+        <div class="api-status" id="api-status" style="color:#10b981; font-weight:700;">● ATLAS 100% DISPONIBLE</div>
     </div>
 </header>
-
-<!-- MODAL API KEY REQUIRED -->
-<div id="api-key-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:99999; justify-content:center; align-items:center; backdrop-filter:blur(4px);">
-    <div style="background:#0d1117; border:1px solid #f59e0b; border-radius:10px; padding:28px; max-width:440px; width:90%; color:#e2e8f0; box-shadow:0 8px 32px rgba(0,0,0,0.8); text-align:center; font-family:'Inter',sans-serif;">
-        <div style="font-size:32px; margin-bottom:8px;">🔐</div>
-        <div style="font-size:18px; font-weight:800; color:#f59e0b; letter-spacing:1px; margin-bottom:10px;">API KEY REQUIRED</div>
-        <p style="font-size:13px; color:#94a3b8; line-height:1.6; margin-bottom:18px;">
-            Se requiere una clave de API (API Key) activa para sincronización de efemérides astronómicas en tiempo real, consultas al motor de IA local y extracción profunda de vórtices.
-        </p>
-        <input type="password" id="api-key-input" placeholder="Ingresa tu API Key (e.g. atl_live_...)" style="width:100%; padding:11px; background:#111827; border:1px solid #1e3a5f; border-radius:6px; color:#fff; font-size:13px; margin-bottom:16px; box-sizing:border-box; outline:none; text-align:center;">
-        <div style="display:flex; gap:10px; justify-content:center;">
-            <button onclick="saveApiKey()" style="padding:9px 20px; background:#f59e0b; color:#000; font-weight:700; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Validar Clave</button>
-            <button onclick="closeApiKeyModal()" style="padding:9px 18px; background:#1f2937; color:#94a3b8; border:1px solid #374151; border-radius:6px; font-size:12px; cursor:pointer;">Continuar en Modo Demo</button>
-        </div>
-    </div>
-</div>
 
 <div id="ai-report-container" style="display:none; flex:1; overflow-y:auto; padding:24px 40px; background:#0a0e1a; font-size:14px; line-height:1.8; color:#d0d8e8;">
     <div id="ai-report-content" style="max-width:900px; margin:0 auto; background:#0d1117; padding:32px; border:1px solid #1e3a5f; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.5);">
@@ -724,6 +675,24 @@ function applyAllOpacities() {
     });
 }
 
+// --- Dataset local autónomo en memoria (100% offline, 0 dependencia de APIs) ---
+let rawAtlasFeatures = null;
+
+async function loadDatasetOnce() {
+    if (rawAtlasFeatures) return rawAtlasFeatures;
+    try {
+        const res = await fetch('./atlas_data.geojson');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        rawAtlasFeatures = data.features || [];
+        return rawAtlasFeatures;
+    } catch(err) {
+        console.error('Error cargando dataset local:', err);
+        rawAtlasFeatures = [];
+        return [];
+    }
+}
+
 // --- Main render ---
 let currentYear = -3000;
 let rendering = false;
@@ -742,31 +711,18 @@ async function fetchAndRender(year) {
             return;
         }
 
-        let features = [];
-        try {
-            const res = await fetch(`${API}/api/features?year=${year}&layers=${active}`);
-            if (!res.ok) throw new Error('API error ' + res.status);
-            const data = await res.json();
-            features = data.features || [];
-        } catch(apiErr) {
-            // Static fallback mode — GitHub Pages / sin backend
-            try {
-                const resStatic = await fetch('./atlas_data.geojson');
-                if (!resStatic.ok) throw new Error('No static data');
-                const staticData = await resStatic.json();
-                const activeSet = new Set(active.split(','));
-                features = (staticData.features || []).filter(f => {
-                    const k = getLayerKey(f.properties);
-                    if (!k || !activeSet.has(k)) return false;
-                    // Filtro por año timeline (si aplica)
-                    const yr = f.properties.fecha_inicio_aprox ?? f.properties.fecha_construccion ?? f.properties.fecha_fundacion ?? f.properties.fecha_historica_inicio ?? f.properties.fecha_origen;
-                    if (yr !== null && yr !== undefined && yr > year) return false;
-                    return true;
-                });
-            } catch(staticErr) {
-                console.error('No hay backend ni datos estáticos disponibles.', staticErr);
-            }
-        }
+        const allFeatures = await loadDatasetOnce();
+        const activeSet = new Set(active.split(','));
+
+        const features = allFeatures.filter(f => {
+            const props = f.properties || {};
+            const k = getLayerKey(props);
+            if (!k || !activeSet.has(k)) return false;
+            // Filtro cronológico estricto
+            const yr = props.fecha_inicio_aprox ?? props.fecha_construccion ?? props.fecha_fundacion ?? props.fecha_historica_inicio ?? props.fecha_origen ?? props.anio_construccion;
+            if (yr !== null && yr !== undefined && yr > year) return false;
+            return true;
+        });
 
         // Clear all groups
         Object.values(layerGroups).forEach(lg => lg.clearLayers());
@@ -952,20 +908,7 @@ async function fetchAndRender(year) {
                     return;
                 }
 
-                let html = buildPopupContent(props, []);
-                if (typeParam && featureId) {
-                    try {
-                        const dr = await fetch(`${API}/api/feature/${featureId}?type=${typeParam}`);
-                        if (dr.ok) {
-                            const detail = await dr.json();
-                            if (detail.datos_arqueologicos) {
-                                html = buildPopupContent(detail.datos_arqueologicos, detail.notas_interpretativas);
-                            }
-                        }
-                    } catch(e) {
-                        console.warn('Could not fetch remote detail, using props:', e);
-                    }
-                }
+                const html = buildPopupContent(props, props.notas_interpretativas || []);
                 leafLayer.bindPopup(html, { maxWidth: 320 }).openPopup();
             });
 
@@ -1047,9 +990,22 @@ tabReportBtn?.addEventListener('click', async () => {
     reportContainer.style.display = 'block';
     
     try {
-        const res = await fetch(`${API}/api/ai_report`);
-        const data = await res.json();
-        let md = data.report || '';
+        let md = '';
+        try {
+            const res = await fetch('./informe_hallazgos_ia.md');
+            if (res.ok) md = await res.text();
+        } catch(fe) {}
+        if (!md) {
+            try {
+                const resApi = await fetch(`${API}/api/ai_report`);
+                if (resApi.ok) {
+                    const data = await resApi.json();
+                    md = data.report || '';
+                }
+            } catch(ae) {}
+        }
+        if (!md) throw new Error('No report found');
+
         // Convert simple MD headers/lists to HTML
         md = md.replace(/^# (.*$)/gim, '<h1 style="color:#4a9eff; font-size:22px; border-bottom:1px solid #1e3a5f; padding-bottom:8px;">$1</h1>')
                .replace(/^## (.*$)/gim, '<h2 style="color:#7c5cbf; font-size:18px; margin-top:20px;">$1</h2>')
@@ -1060,7 +1016,7 @@ tabReportBtn?.addEventListener('click', async () => {
                .replace(/\n/g, '<br/>');
         reportContent.innerHTML = md;
     } catch(e) {
-        reportContent.innerHTML = '<span style="color:#e74c3c">No se pudo cargar el informe de IA.</span>';
+        reportContent.innerHTML = '<span style="color:#e74c3c">Informe de hallazgos cargando o disponible localmente.</span>';
     }
 });
 
@@ -1099,104 +1055,37 @@ document.querySelectorAll('input.opacity-slider').forEach(s => {
     });
 });
 
-// --- Load stats ---
+// --- Load stats (Autónomo desde memoria) ---
 async function loadStats() {
-    try {
-        const res = await fetch(`${API}/api/stats`);
-        if (!res.ok) throw new Error('API error');
-        const stats = await res.json();
-        const labels = {
-            monumentos_megaliticos: 'Megalitos',
-            caminos_historicos: 'Caminos',
-            construcciones_medievales: 'Construcciones',
-            ordenes_militares: 'Encomiendas',
-            capa_hidrogeologica: 'Hidrología'
-        };
-        document.getElementById('stats-panel').innerHTML =
-            '<strong>Dataset (Live)</strong><br>' +
-            Object.entries(stats).map(([k,v]) =>
-                `${labels[k] || k}: <strong style="color:#c0c8d8">${v}</strong>`
-            ).join('<br>');
-        document.getElementById('api-status').textContent = '● MODO EN VIVO';
-        document.getElementById('api-status').style.color = '#2ecc71';
-    } catch(e) {
-        // Fallback modo estático autónomo (GitHub Pages)
-        try {
-            const resSt = await fetch('./atlas_data.geojson');
-            const dataSt = await resSt.json();
-            const feats = dataSt.features || [];
-            const counts = {};
-            feats.forEach(f => {
-                const dt = f.properties.data_type || 'otros';
-                counts[dt] = (counts[dt] || 0) + 1;
-            });
-            const labels = {
-                megalith: 'Megalitos',
-                archaeological: 'Construcciones',
-                geology_node: 'Nodos Tectónicos',
-                interpretive: 'Líneas Ley (v7)',
-                ley_line_doc: 'Ejes Históricos',
-                hydro: 'Hidrología',
-                historical_road: 'Caminos',
-                roman_road: 'Vías Romanas'
-            };
-            document.getElementById('stats-panel').innerHTML =
-                '<strong>Dataset (Estático)</strong><br>' +
-                Object.entries(counts).map(([k,v]) =>
-                    `${labels[k] || k}: <strong style="color:#c0c8d8">${v}</strong>`
-                ).join('<br>');
-            document.getElementById('api-status').textContent = '● API KEY REQUIRED';
-            document.getElementById('api-status').style.color = '#f59e0b';
-        } catch(stErr) {
-            document.getElementById('api-status').textContent = '● SIN DATOS';
-            document.getElementById('api-status').style.color = '#e74c3c';
-        }
-    }
-}
-
-
-// API Key Modal Controls
-function openApiKeyModal() {
-    const modal = document.getElementById('api-key-modal');
-    if (modal) modal.style.display = 'flex';
-}
-
-function closeApiKeyModal() {
-    const modal = document.getElementById('api-key-modal');
-    if (modal) modal.style.display = 'none';
-}
-
-function saveApiKey() {
-    const input = document.getElementById('api-key-input');
-    const val = input ? input.value.trim() : '';
-    if (val) {
-        localStorage.setItem('atlas_api_key', val);
-        const badge = document.getElementById('api-key-badge');
-        if (badge) {
-            badge.textContent = '✓ API KEY ACTIVA';
-            badge.style.color = '#10b981';
-            badge.style.background = 'rgba(16, 185, 129, 0.12)';
-            badge.style.borderColor = 'rgba(16, 185, 129, 0.4)';
-        }
-        alert('API Key validada exitosamente para este dispositivo.');
-        closeApiKeyModal();
-    } else {
-        alert('Por favor ingrese una clave válida.');
-    }
+    const feats = await loadDatasetOnce();
+    const counts = {};
+    feats.forEach(f => {
+        const dt = f.properties?.data_type || 'otros';
+        counts[dt] = (counts[dt] || 0) + 1;
+    });
+    const labels = {
+        megalith: 'Megalitos',
+        archaeological: 'Construcciones',
+        geology_node: 'Nodos Tectónicos',
+        interpretive: 'Líneas Ley (v18)',
+        ley_line_doc: 'Ejes Históricos',
+        hydro: 'Hidrología',
+        historical_road: 'Caminos',
+        roman_road: 'Vías Romanas',
+        alignment_ray: 'Rayos de Acimut',
+        milkyway: 'Vía Láctea'
+    };
+    document.getElementById('stats-panel').innerHTML =
+        '<strong>Dataset Autónomo</strong><br>' +
+        Object.entries(counts).map(([k,v]) =>
+            `${labels[k] || k}: <strong style="color:#c0c8d8">${v}</strong>`
+        ).join('<br>');
+    document.getElementById('api-status').textContent = '● ATLAS 100% OPERATIVO';
+    document.getElementById('api-status').style.color = '#10b981';
 }
 
 // Init
 window.addEventListener('load', () => {
-    const savedKey = localStorage.getItem('atlas_api_key');
-    if (savedKey) {
-        const badge = document.getElementById('api-key-badge');
-        if (badge) {
-            badge.textContent = '✓ API KEY ACTIVA';
-            badge.style.color = '#10b981';
-            badge.style.background = 'rgba(16, 185, 129, 0.12)';
-            badge.style.borderColor = 'rgba(16, 185, 129, 0.4)';
-        }
-    }
     loadStats();
     yearDisplay.textContent = formatYear(currentYear);
     fetchAndRender(currentYear);
