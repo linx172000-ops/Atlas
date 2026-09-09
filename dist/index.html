@@ -486,10 +486,16 @@ const darkLabels = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/se
 });
 const darkTileGroup = L.layerGroup([darkBase, darkLabels]);
 
-const lightTileLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 19
+// Capa clara: Esri Light Gray Canvas (tierra en gris neutro sin carreteras verdes/amarillas, agua/ríos/lagos en azul suave)
+const lightBase = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Esri, OpenStreetMap contributors',
+    maxZoom: 16
 });
+const lightLabels = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '',
+    maxZoom: 16
+});
+const lightTileGroup = L.layerGroup([lightBase, lightLabels]);
 
 let currentTheme = localStorage.getItem('atlas_theme') || 'dark';
 
@@ -502,7 +508,7 @@ map.getPane('overlayPane').style.zIndex = '400';
 map.getPane('markerPane').style.zIndex = '600';
 
 if (currentTheme === 'light') {
-    lightTileLayer.addTo(map);
+    lightTileGroup.addTo(map);
     document.body.classList.add('light-theme');
 } else {
     darkTileGroup.addTo(map);
@@ -526,10 +532,10 @@ function updateThemeUI() {
 function toggleTheme() {
     if (currentTheme === 'dark') {
         map.removeLayer(darkTileGroup);
-        lightTileLayer.addTo(map);
+        lightTileGroup.addTo(map);
         currentTheme = 'light';
     } else {
-        map.removeLayer(lightTileLayer);
+        map.removeLayer(lightTileGroup);
         darkTileGroup.addTo(map);
         currentTheme = 'dark';
     }
