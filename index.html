@@ -443,6 +443,8 @@
 </footer>
 
 <script src="./assets/leaflet/leaflet.js"></script>
+<script src="./assets/europe_base.js"></script>
+<script src="./atlas_data.js"></script>
 <script>
 const API = `http://${window.location.hostname || 'localhost'}:8080`;
 const COLORS = {
@@ -525,9 +527,12 @@ function getVectorBaseStyle(theme) {
 
 async function initVectorBase() {
     try {
-        const res = await fetch('./assets/europe_base.geojson');
-        if (res.ok) {
-            const data = await res.json();
+        let data = window.EUROPE_BASE_DATA;
+        if (!data) {
+            const res = await fetch('./assets/europe_base.geojson');
+            if (res.ok) data = await res.json();
+        }
+        if (data) {
             vectorBaseLayer = L.geoJSON(data, {
                 pane: 'vectorBasePane',
                 style: getVectorBaseStyle(currentTheme),
@@ -732,6 +737,11 @@ let rawAtlasFeatures = null;
 
 async function loadDatasetOnce() {
     if (rawAtlasFeatures && rawAtlasFeatures.length > 0) return rawAtlasFeatures;
+    if (window.ATLAS_DATA && window.ATLAS_DATA.features && window.ATLAS_DATA.features.length > 0) {
+        rawAtlasFeatures = window.ATLAS_DATA.features;
+        console.log('Dataset cargado directamente desde memoria (window.ATLAS_DATA):', rawAtlasFeatures.length, 'features');
+        return rawAtlasFeatures;
+    }
     const paths = ['./atlas_data.geojson', './docs/atlas_data.geojson', 'atlas_data.geojson'];
     for (const p of paths) {
         try {

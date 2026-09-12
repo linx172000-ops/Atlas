@@ -2,10 +2,13 @@ package com.atlas.historico;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.webkit.WebViewAssetLoader;
+import androidx.webkit.WebViewClientCompat;
 
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
@@ -14,7 +17,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
+        final WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
+            .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
+            .build();
+
         webView = new WebView(this);
         setContentView(webView);
 
@@ -31,8 +38,15 @@ public class MainActivity extends AppCompatActivity {
         settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
 
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("file:///android_asset/www/index.html");
+        webView.setWebViewClient(new WebViewClientCompat() {
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                WebResourceResponse response = assetLoader.shouldInterceptRequest(request.getUrl());
+                return response != null ? response : super.shouldInterceptRequest(view, request);
+            }
+        });
+
+        webView.loadUrl("https://appassets.androidplatform.net/assets/www/index.html");
     }
 
     @Override

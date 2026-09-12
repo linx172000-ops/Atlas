@@ -15,6 +15,11 @@ def sync_assets():
     src_geojson = os.path.join(BASE_DIR, 'atlas_data.geojson')
     shutil.copy2(src_geojson, os.path.join(ANDROID_ASSETS_DIR, 'atlas_data.geojson'))
     print('  -> atlas_data.geojson copiado')
+
+    src_js = os.path.join(BASE_DIR, 'atlas_data.js')
+    if os.path.exists(src_js):
+        shutil.copy2(src_js, os.path.join(ANDROID_ASSETS_DIR, 'atlas_data.js'))
+        print('  -> atlas_data.js copiado (memoria directa para Android)')
     
     src_assets = os.path.join(BASE_DIR, 'assets')
     dst_assets = os.path.join(ANDROID_ASSETS_DIR, 'assets')
