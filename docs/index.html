@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Atlas del Paisaje Histórico — Visor cartográfico interactivo del norte peninsular, 4500 a.C. – 1250 d.C.">
     <title>Atlas del Paisaje Histórico — Laboratorio Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="./assets/leaflet/leaflet.css"/>
     <style>
         *, *::before, *::after { box-sizing: border-box; }
-        body { margin:0; font-family:'Inter',sans-serif; background:#0a0e1a; color:#e0e0e0; display:flex; flex-direction:column; height:100vh; overflow:hidden; }
+        body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background:#0a0e1a; color:#e0e0e0; display:flex; flex-direction:column; height:100vh; overflow:hidden; }
 
         /* HEADER */
         header {
@@ -66,7 +65,8 @@
         #stats-panel strong { color:#4a9eff; }
 
         /* MAP */
-        #map { flex:1; }
+        #map { flex:1; background:#0b0f19; }
+        body.light-theme #map { background:#c5d7e8; }
 
         /* FOOTER TIMELINE */
         footer {
@@ -442,7 +442,7 @@
     </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="./assets/leaflet/leaflet.js"></script>
 <script>
 const API = `http://${window.location.hostname || 'localhost'}:8080`;
 const COLORS = {
@@ -503,9 +503,43 @@ let currentTheme = localStorage.getItem('atlas_theme') || 'dark';
 const map = L.map('map', { preferCanvas: true }).setView([48.0, -1.0], 5);
 
 // Asegurar que el zIndex de los paneles mantenga las capas de datos siempre encima del mapa base
+map.createPane('vectorBasePane');
+map.getPane('vectorBasePane').style.zIndex = '180';
 map.getPane('tilePane').style.zIndex = '200';
 map.getPane('overlayPane').style.zIndex = '400';
 map.getPane('markerPane').style.zIndex = '600';
+
+// Mapa base vectorial 100% offline (funciona sin internet ni servidores de teselas)
+let vectorBaseLayer = null;
+
+function getVectorBaseStyle(theme) {
+    const isLight = (theme || currentTheme) === 'light';
+    return {
+        fillColor: isLight ? '#dbe4ee' : '#141a29',
+        fillOpacity: 0.98,
+        color: isLight ? '#94a3b8' : '#27354d',
+        weight: 1.2,
+        opacity: 0.9
+    };
+}
+
+async function initVectorBase() {
+    try {
+        const res = await fetch('./assets/europe_base.geojson');
+        if (res.ok) {
+            const data = await res.json();
+            vectorBaseLayer = L.geoJSON(data, {
+                pane: 'vectorBasePane',
+                style: getVectorBaseStyle(currentTheme),
+                interactive: false
+            }).addTo(map);
+            console.log('Mapa base vectorial offline cargado con éxito');
+        }
+    } catch(e) {
+        console.warn('Mapa base vectorial offline no disponible:', e);
+    }
+}
+initVectorBase();
 
 if (currentTheme === 'light') {
     lightTileGroup.addTo(map);
@@ -538,6 +572,9 @@ function toggleTheme() {
         map.removeLayer(lightTileGroup);
         darkTileGroup.addTo(map);
         currentTheme = 'dark';
+    }
+    if (vectorBaseLayer) {
+        vectorBaseLayer.setStyle(getVectorBaseStyle(currentTheme));
     }
     localStorage.setItem('atlas_theme', currentTheme);
     updateThemeUI();

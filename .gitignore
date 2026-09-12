@@ -14,6 +14,7 @@ atlas.db
 
 # Archivos de desarrollo Python (no necesarios para el mapa)
 *.py
+!sync_android_assets.py
 requirements.txt
 
 # Archivos de capas intermedias
